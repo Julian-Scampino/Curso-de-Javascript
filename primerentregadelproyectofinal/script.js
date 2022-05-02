@@ -18,28 +18,41 @@ const guitarra7 = new Guitarra ("Jackson", "Ve", 6, "azul", 60000)
 const guitarra8 = new Guitarra ("Ibanez", "Jem", 6, "blanco", 78500)
 const guitarra9 = new Guitarra ("Ibanez", "Js", 7, "violeta", 60000)
 const guitarra10 = new Guitarra ("Ibanez", "Gio", 6, "azul", 45000)
-
+// Aqui abajo : el array
 let guiatarrasEnArray = [guitarra1, guitarra2, guitarra3, guitarra4, guitarra5, guitarra6, guitarra7, guitarra8, guitarra9, guitarra10]
-
-//Aqui abajo : un simulador para consultar productos segun un rango de precios.
-
-alert("Busque guitarras en un rango de precios")
-let precioMinimo = parseFloat(prompt("Diga el precio mínimo"));
-while(isNaN(precioMinimo) || precioMinimo === " "){
-    alert("Error. Escriba un numero");
-    precioMinimo = parseFloat(prompt("Diga el precio mínimo"));
-}
-let precioMaximo = parseFloat(prompt("Diga el precio máximo"));
-while(isNaN(precioMaximo) || precioMaximo === " "){
-    alert("Error. Escriba un numero");
-    precioMaximo = parseFloat(prompt("Diga el precio máximo"));
-}
-alert(`Usted desea buscar guitarras con el precio entre $${precioMinimo} y $${precioMaximo}`)
-// Guardo en un array los objetos filtrados anteriormente por el precio
-const precioConsultado1 = guiatarrasEnArray.filter(unPrecio => unPrecio.precio >= precioMinimo && unPrecio.precio <= precioMaximo)
-
-precioConsultado1.forEach((mostrar) => {
-    alert("Las guitarras que tenemos en ese rango de precios son : \n" + (JSON.stringify(mostrar)));
+guiatarrasEnArray.forEach((mostrar) => {
+    alert("Las guitarras disponibles son : \n" + (JSON.stringify(mostrar)));
+    console.log(mostrar);
 })
+let confirmar = true
+////Aqui abajo : una simulador para consultar productos segun un rango de precios.
+do{
+    alert("Busque guitarras en un rango de precios")
+    let precioMinimo = parseFloat(prompt("Diga el precio mínimo"));
+    while(isNaN(precioMinimo) || precioMinimo === " "){
+        alert("Error. Escriba un numero");
+        precioMinimo = parseFloat(prompt("Diga el precio mínimo"));
+    }
+    let precioMaximo = parseFloat(prompt("Diga el precio máximo"));
+    while(isNaN(precioMaximo) || precioMaximo === " "){
+        alert("Error. Escriba un numero");
+        precioMaximo = parseFloat(prompt("Diga el precio máximo"));
+    }
+    alert(`Usted desea buscar guitarras con precio entre $${precioMinimo} y $${precioMaximo}`)
+    
+    const precioConsultado1 = guiatarrasEnArray.filter(unPrecio => unPrecio.precio >= precioMinimo && unPrecio.precio <= precioMaximo)
+    console.log(precioConsultado1)
+    
+    if(precioConsultado1.length == 0){
+        alert("no hay productos con esos precios")
+    } else{
+        precioConsultado1.forEach((mostrar) => {
+            alert("Las guitarras que tenemos en ese rango de precios son : \n" + (JSON.stringify(mostrar)));
+            console.log(mostrar);
+        })
+    } 
+    confirmar = confirm("¿Quiere buscar otra vez")
+} while(confirmar)
+alert("Gracias, vuelva cuando quiera")
 
 
