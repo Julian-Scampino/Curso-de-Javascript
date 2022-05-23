@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="headLine" >
+            <h2>Esta es una plataforma educativa</h1>
+        </div>
+        <div id="matematica" class="materia">
+            <h3>Matemática</h2>
+            <br>
+            <h4>Ejercicios</h4>
+            <div class="hijosMate">
+                <label for="resultado1">3 x 3</label>
+                <br>
+                <input type="text" id="resultado1">
+            </div>
+            <div class="hijosMate">
+                <label for="resultado2">10 / 2</label>
+                <br>
+                <input type="text" id="resultado2">
+            </div>
+        </div>
+        <div id="lengua" class="materia">
+            <h3>Lengua</h4>
+                <br>
+            <div class="hijosLengua">
+                <h4>Practicando: sustantivos, adjetivos y verbos</h4>
+                <br>
+                <form id="historiaPersonal">
+                    <div>
+                        <label for="sustantivo">¿Cómo te llamas?</label>
+                        <br>
+                        <input type="text" id="sustantivo">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="adjetivo">¿Cómo sos?</label>
+                        <br>
+                        <input type="text" id="adjetivo">
+                        <br>
+                    </div>
+                    <div>
+                        <label for="verbo">¿Qué te gusta hacer?</label>
+                        <br>
+                        <input type="text" id="verbo">
+                    </div>
+                    <button type="submit" id="historiaPersonalBoton">Listo</button>
+                </form>
+                <p id="historiaPersonalTexto">Contesta las preguntas y este texto cambiará</p>
+            </div>
+            <hr>
+            <div class="hijosLengua">
+                <h4>Ejercicios</h4>
+                <br>
+                <p>Indique si es sustantivo, adjetivo o verbo segun el orden en el que aparezcan:</p>
+                <br>
+                <p>"Había una vez, subiendo las escaleras, un veloz niño..."</p>
+                <br>
+                <input type="text" id="lenguaRespuesta1">
+                <input type="text" id="lenguaRespuesta2">
+                <input type="text" id="lenguaRespuesta3">
+                <input type="text" id="lenguaRespuesta4">
+                <input type="text" id="lenguaRespuesta5">
+            </div>
+        </div>
+        <div id="resultado"></div>
+        <footer> 
+            <h2>Alumno: Julián Scampino</h2>
+        </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
