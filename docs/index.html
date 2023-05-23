@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <link rel="stylesheet" href="./estilos/style.css">
+        <title>Document</title>
+    </head>
+    <body id="bodyIndex" class="formBody">
+        <header>
+            <h1>Educativa</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="./secciones/puntaje.html">Puntaje</a>
+                    </li>
+                    <li>
+                        <a href="./secciones/productos.html">Productos</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+         <!-- ----------- Formulario de usuario ----------- -->
+        <div id="contenedorForm">
+            <h2>Esta es una plataforma educativa</h2>
+            <form action="" id="formUsuario">
+                <h4>Escriba su nombre y apellido para empezar</h4>
+                <input type="text" name="" id="inputNombreUsuario" required >
+                <input type="text" name="" id="inputApellidoUsuario" required >
+                <button type="submit">ENVIAR</button>
+            </form>
+        </div>
+        <main id="mainIndex" class="esconderseMain">
+            <!-- ----------- Matematica ----------- -->
+            <div id="matematica" class="materia">
+                <h3>Matemática</h2>
+                <br>
+                <div class="hijosMate" id="practicaMate">
+                    <h4>Calculadora</h4>
+                    <form id="calculadora">
+                        <input type="text" id="calculadoraValor1" required>
+                        <select name="operadores" id="selector">
+                            <option value="+">Sumar</option>
+                            <option value="-">Restar</option>
+                            <option value="/">Dividir</option>
+                            <option value="*">Multiplicar</option>
+                        </select>                    
+                        <input type="text" id="calculadoraValor2" required>
+                        <button type="submit" id="botonCalculadora">Listo</button>
+                    </form>
+                    <p id="textoResultadoCalculadora"></p>
+                </div>
+                <div class="hijosMate esconderse" id="ejercicioMate">
+                    <h4>Ejercicios</h4>
+                    <br>
+                    <label for="preguntaMate1">Si tengo 4 perros, 2 gatos y 3 caballos. ¿Cuántos animales tengo en total?</label>
+                    <br>
+                    <input type="text" name="" id="preguntaMate1" class="preguntasMate">
+                    <br>
+                    <label for="preguntaMate2">A una flor se la caen los pétalos. Había 8 y se le cayeron 6 ¿Cuántos pétalos tiene ahora?</label>
+                    <br>
+                    <input type="text" name="" id="preguntaMate2" class="preguntasMate">
+                    <br>
+                    <label for="preguntaMate3">Hay 9 manzanas y hay 3 personas. ¿Cuántas manzanas deberían tener cada persona?</label>
+                    <br>
+                    <input type="text" name="" id="preguntaMate3" class="preguntasMate">
+                    <br>
+                    <label for="preguntaMate4">Si una tienda vende 5 caramelos por $10. ¿Cuantos caramelos puedo comprar con $30? </label>
+                    <input type="text" name="" id="preguntaMate4" class="preguntasMate">
+                    <br>
+                </div>
+            </div>
+            <!-- ----------- Lengua ----------- -->
+            <div id="lengua" class="materia">
+                <h3>Lengua</h4>
+                    <br>
+                <div class="hijosLengua" id="practicaLengua">
+                    <h4>Practicando: sustantivos, adjetivos y verbos</h4>
+                    <br>
+                    <form id="historiaPersonal">
+                        <div>
+                            <label for="sustantivo">¿Cómo te llamas?</label>
+                            <br>
+                            <input type="text" id="sustantivo" required>
+                            <br>
+                        </div>
+                        <div>
+                            <label for="adjetivo">¿Cómo sos?</label>
+                            <br>
+                            <input type="text" id="adjetivo" required>
+                            <br>
+                        </div>
+                        <div>
+                            <label for="verbo">¿Qué te gusta hacer?</label>
+                            <br>
+                            <input type="text" id="verbo" required>
+                        </div>
+                        <button type="submit" id="historiaPersonalBoton">Listo</button>
+                    </form>
+                    <p id="historiaPersonalTexto">Contesta las preguntas y este texto cambiará</p>
+                </div>
+                <hr>
+                <div class="hijosLengua" id="ejercicioLengua">
+                    <h4>Ejercicios</h4>
+                    <br>
+                    <p>Indique si es sustantivo, adjetivo o verbo según el orden en el que aparezcan:</p>
+                    <br>
+                    <p>"Había una vez, subiendo las escaleras, un veloz niño..."</p>
+                    <br>
+                    <input type="text" class="preguntasLengua">
+                    <input type="text" class="preguntasLengua">
+                    <input type="text" class="preguntasLengua">
+                    <input type="text" class="preguntasLengua">
+                    <input type="text" class="preguntasLengua">
+                </div>
+            </div>
+            <!-- ----------- Memoria ----------- -->
+            <div id="memoria" class="materia">
+                <h3>Juego de memoria</h3>
+                <h5>Este es un juego de memoria. <br> Haga 'click' en el botón para ver los objetos, luego haga 'click' en el cuadrado que corresponda según lo que pide el texto.</h5>
+                <div id="memoria1">
+                    <div id="contenedorDeImagenes" class="bloquearClickContenedorMemoria">
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-auto.jpg"  class="imagenesClick" alt="auto" id="auto">
+                        </div>
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-pelota.jpg" class="imagenesClick" alt="pelota" id="pelota">    
+                        </div>
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-nuve.jpg" class="imagenesClick" alt="nuve" id="nuve">
+                        </div>
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-elefante.jpg" class="imagenesClick" alt="elefante" id="elefante">
+                        </div>
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-trofeo.jpg" class="imagenesClick" alt="trofeo" id="trofeo">
+                        </div>
+                        <div class="claseCajaClick">
+                            <img src="./imagenes/icono-arbol.jpg" class="imagenesClick" alt="arbol" id="arbol">
+                        </div>
+                    </div>
+                    <h5> Haga 'click' en el cuadrado donde está el o la:</h5>
+                    <p id="textoClick"></p>
+                    <button id="botonAnimacion">Mostrar animación</button>
+                </div>
+            </div>
+            <!-- ----------- Banderas ----------- -->
+            <div id="banderas">
+                <div id="contenedorBotonesColores">
+                    <button class="botonesColores" id="botonBlanco">Color Blanco</button>
+                    <button class="botonesColores" id="botonCeleste">Color Celeste</button>
+                    <button class="botonesColores" id="botonAmarillo">Color Amarillo</button>
+                    <button class="botonesColores" id="botonRojo">Color Rojo</button>
+                    <button class="botonesColores" id="botonVerde">Color Verde</button>
+                    <button class="botonesColores" id="botonRosa">Color Rosa</button>
+                </div>
+                <div id="contenedorTextoBanderas">
+                    <h3>Coloreando banderas</h3>
+                    <br>
+                    <br>
+                    <h5>Para seleccionar un color has 'click' en un botón con los colores. <br> Luego has click en los lugares para colorear.
+                    <br><br>1- Argentina <br> 2- Chile <br> 3- Italia
+                    </h5>
+                </div>
+                <div id="contenedorDeBanderas">
+                    <div id="contenedorArgentina">
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"><img src="./imagenes/sol.jpg" alt="sol"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                        <div class="cajasArgentina"></div>
+                    </div>
+                    <div id="contenedorChile">
+                        <div class="cajasChile"></div>
+                        <div class="cajasChile"></div>
+                        <div class="cajasChile"></div>
+                        <div class="cajasChile"></div>
+                    </div>
+                    <div id="contenedorItalia">
+                        <div class="cajasItalia"></div>
+                        <div class="cajasItalia"></div>
+                        <div class="cajasItalia"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- ----------- Historia ----------- -->
+            <div id="historia">
+                <h3>Historia</h3>
+                <div class="preguntasHistoria">
+                    <h5>¿Quién descubrió América?</h5>
+                    <div class="contenedorRadios">
+                        <input type="radio" name="america" value="Colon" id="america1">
+                        <label for="america1">Colón</label>
+                        <br>
+                        <input type="radio" name="america" value="Magallanes" id="america2">
+                        <label for="america2">Magallanes</label>
+                        <br>
+                        <input type="radio" name="america" value="Drake" id="america3">
+                        <label for="america3">Drake</label>
+                    </div>    
+                </div>
+                <div class="preguntasHistoria">
+                    <h5>¿En qué año se desarrolló la Revolución de Mayo en Argentina?</h5>
+                    <div class="contenedorRadios">
+                        <input type="radio" name="revolucionDeMayo" value="1816" id="revolucionDeMayo1">
+                        <label for="revolucionDeMayo1">1816</label>
+                        <br>
+                        <input type="radio" name="revolucionDeMayo" value="1810" id="revolucionDeMayo2">
+                        <label for="revolucionDeMayo2">1810</label>
+                        <br>
+                        <input type="radio" name="revolucionDeMayo" value="1806" id="revolucionDeMayo3">
+                        <label for="revolucionDeMayo3">1806</label>
+                    </div>
+                </div>
+                <div class="preguntasHistoria">
+                    <h5>El representante del Rey de España en el Rio de La Plata se llamaba...</h5>
+                    <div class="contenedorRadios">
+                        <input type="radio" name="representante" value="Virrey" id="representante1">
+                        <label for="representante1">Virrey</label>
+                        <br>
+                        <input type="radio" name="representante" value="Representante" id="representante2">
+                        <label for="representante2">Representante</label>
+                        <br>
+                        <input type="radio" name="representante" value="Consejero" id="representante3">
+                        <label for="representante3">Consejero</label>
+                    </div>
+                </div>
+                <div class="preguntasHistoria">
+                    <h5>¿Cuántas veces fue votado el ex presidente Juan Domingo Perón?</h5>
+                    <div class="contenedorRadios">
+                        <input type="radio" name="peron" value="1" id="peron1">
+                        <label for="peron1">1</label>
+                        <br>
+                        <input type="radio" name="peron" value="2" id="peron2">
+                        <label for="peron2">2</label>
+                        <br>
+                        <input type="radio" name="peron" value="3" id="peron3">
+                        <label for="peron3">3</label>
+                    </div>
+                </div>
+            </div>
+            <div id="contenedorBotonFinal">
+                <h4>Haga 'click' para finalizar</h4>
+                <a href="./secciones/puntaje.html" id="botonFinal">FINALIZAR</a>
+            </div>
+        </main>
+        <!-- ----------- FOOTER ----------- -->
+        <footer> 
+            <h2>Alumno: Julián Scampino</h2>
+        </footer>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
+        <script src="./javascript/script.js"></script>
+        <script src="./javascript/animaciones.js"></script>
+    </body>
+</html>
