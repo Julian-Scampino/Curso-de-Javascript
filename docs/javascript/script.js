@@ -116,8 +116,16 @@ let botonRosa= document.getElementById('botonRosa')
 botonRosa.addEventListener('click', () =>{
     valorColor = "colorRosa"
 })
+// Bloquee la opcion de colorear por default.Esto desbloquea la posibilidad de colorear las banderas luego que se hace click en algun color
+let botonesColores = document.querySelectorAll(".botonesColores")
+botonesColores.forEach((element)=>{
+    element.addEventListener('click',()=>{
+        document.querySelector("#contenedorDeBanderas").style.pointerEvents = "auto"
+    })
 
-let respuestasArgentina = ["cajasArgentina colorCeleste", "cajasArgentina colorCeleste", "cajasArgentina colorCeleste", "cajasArgentina colorBlanco", "cajasArgentina colorBlanco", "cajasArgentina colorBlanco", "cajasArgentina colorCeleste", "cajasArgentina colorCeleste", "cajasArgentina colorCeleste"]
+})
+
+let respuestasArgentina = ["cajasArgentina colorCeleste", "cajasArgentina colorBlanco",  "cajasArgentina colorCeleste"]
 let cajasArgentina = Array.from(document.getElementsByClassName("cajasArgentina"))
 cajasArgentina.forEach((element, index) =>{
     element.addEventListener('click', () =>{
@@ -188,6 +196,7 @@ botonFinal.addEventListener('click', (e) =>{
 function correcto (etiqueta){
     etiqueta.className = "bien"
     etiqueta.setAttribute('readonly', '')
+
 }
 // --- Funcion incorrecto --- //
 function incorrecto (etiqueta){

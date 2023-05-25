@@ -1,0 +1,41 @@
+@import "header";
+#bodyPuntaje{
+    font-family: sans-serif;
+    width: auto;
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "mainPuntaje";
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: auto;
+    font-size: 1.1rem;
+}
+#mainPuntaje{
+    grid-area: mainPuntaje;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%);
+
+}
+
+table,caption,tr,th,td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+
+}
+table {
+    caption-side: top;
+    border-collapse: separate;
+    width: 90%;
+    margin: 50px 0px;
+}
+caption{
+    background-color: #0d4879;
+}
+#tablaFooter tr{
+    text-align: center
+}

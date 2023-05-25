@@ -1,14 +1,14 @@
 //----------------------------- Memoria
 let Auto = document.getElementById('auto')
 let Elefante = document.getElementById('elefante')
-let Nuve = document.getElementById('nuve')
+let Nube = document.getElementById('nube')
 let Arbol = document.getElementById('arbol')
 let Trofeo = document.getElementById('trofeo')
 let Pelota = document.getElementById('pelota')
 
 
 let textoClick = document.getElementById('textoClick')
-let arrayMemoria= ["auto", "elefante", "nuve", "arbol", "trofeo", "pelota", "TERMINADO"]
+let arrayMemoria= ["auto", "elefante", "nube", "arbol", "trofeo", "pelota", "TERMINADO"]
 let probandoArray
 let imagenesClick = Array.from(document.getElementsByClassName("imagenesClick"))
 imagenesClick.forEach((element) =>{
@@ -20,11 +20,19 @@ imagenesClick.forEach((element) =>{
             probandoArray = arrayMemoria[0]
             textoClick.innerText = probandoArray
             toast ()
+            //Ocultando el elemento de hermano mayor P que contiene el signo de pregunta ?
+            element.previousElementSibling.style.display="none"
         }else{
             element.classList.add("imagenMal", "mostrarImagenesOnClick")
             let siMal = arrayMemoria.indexOf(element.id)
             arrayMemoria.splice(siMal, 1)
             probandoArray = arrayMemoria[0]
+            //Ocultando el elemento de hermano mayor P que contiene el signo de pregunta ?
+            element.previousElementSibling.style.display="none"
+        }
+        if(arrayMemoria?.length == 1){
+            botonAnimacion.remove()
+            document.querySelector("#memoria1 > h5").remove()
         }
     })
 })
@@ -43,10 +51,10 @@ botonAnimacion.addEventListener('click', () =>{
     }, 1000);
     setTimeout(() => {
         Auto.classList.toggle("mostrarMemoria")
-        Nuve.classList.toggle("mostrarMemoria")    
+        Nube.classList.toggle("mostrarMemoria")    
     }, 2000);
     setTimeout(() => {
-        Nuve.classList.toggle("mostrarMemoria")  
+        Nube.classList.toggle("mostrarMemoria")  
         Trofeo.classList.toggle("mostrarMemoria")  
     }, 3000);
     setTimeout(() => {
