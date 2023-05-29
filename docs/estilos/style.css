@@ -471,4 +471,8 @@ label {
     height: 80px; }
   #contenedorArgentina, #contenedorChile, #contenedorItalia {
     width: 300px;
-    height: 150px; } }
+    height: 150px; }
+  .botonesColores {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 5px; } }
