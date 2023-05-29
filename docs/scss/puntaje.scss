@@ -1,4 +1,7 @@
+@import "general";
 @import "header";
+@import "footer";
+@import "variables";
 #bodyPuntaje{
     font-family: sans-serif;
     width: auto;
@@ -6,10 +9,12 @@
     display: grid;
     grid-template-areas: 
     "header"
-    "mainPuntaje";
-    grid-template-rows: 100px 1fr;
+    "mainPuntaje"
+    "footer";
+    grid-template-rows: 100px 1fr 100px;
     grid-template-columns: auto;
     font-size: 1.1rem;
+    background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%);
 }
 #mainPuntaje{
     grid-area: mainPuntaje;
@@ -17,7 +22,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%);
 
 }
 
@@ -29,12 +33,15 @@ table,caption,tr,th,td{
 }
 table {
     caption-side: top;
-    border-collapse: separate;
+    border-collapse: collapse;
     width: 90%;
     margin: 50px 0px;
+    background: #8fe0ffb5;
+    box-shadow: 0 0 6px 0.5px black;
 }
-caption{
-    background-color: #0d4879;
+table th{
+    background: #aed8ff;
+    border-bottom: 3px solid black;
 }
 #tablaFooter tr{
     text-align: center

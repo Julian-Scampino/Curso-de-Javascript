@@ -14,6 +14,7 @@ formUsuario.addEventListener('submit', (event) => {
         document.getElementById("contenedorForm").classList.add("esconderseMain")
         document.getElementById("bodyIndex").classList.replace("formBody", "completoBody")
     }
+    /* let bodyEducativo = document.querySelector('.completoBody').style.background= "linear-gradient(45deg, rgb(197, 6, 255, 1) 0%, rgb(13, 9, 121, 1) 50%, rgb(81, 137, 255, 1) 90%)" */
 })
 
 

@@ -12,8 +12,14 @@ header ul{
 header li{
     list-style: none;
     margin-right: 30px;
+    
 }
 header a{
     color: black;
     font-size: 20px;
+    text-decoration: none;
+}
+header a:hover{
+    text-decoration: underline;
+    text-shadow: 0PX 0PX 12PX white;
 }

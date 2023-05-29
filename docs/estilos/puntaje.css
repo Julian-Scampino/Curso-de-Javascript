@@ -1,3 +1,15 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  text-align: center;
+  background: linear-gradient(354deg, RGBa(103, 61, 254, 1) 0%, RGBa(83, 107, 245, 1) 50%, RGBa(95, 228, 247, 1) 100%); }
+
+button {
+  border: 1px solid black;
+  box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.502); }
+
 header {
   grid-area: header;
   display: flex;
@@ -15,25 +27,39 @@ header li {
 
 header a {
   color: black;
-  font-size: 20px; }
+  font-size: 20px;
+  text-decoration: none; }
+
+header a:hover {
+  text-decoration: underline;
+  text-shadow: 0PX 0PX 12PX white; }
+
+footer {
+  grid-area: footer;
+  margin-bottom: 0px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 #bodyPuntaje {
   font-family: sans-serif;
   width: auto;
   min-height: 100vh;
   display: grid;
-  grid-template-areas: "header" "mainPuntaje";
-  grid-template-rows: 100px 1fr;
+  grid-template-areas: "header" "mainPuntaje" "footer";
+  grid-template-rows: 100px 1fr 100px;
   grid-template-columns: auto;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  background: linear-gradient(354deg, RGBa(103, 61, 254, 1) 0%, RGBa(83, 107, 245, 1) 50%, RGBa(95, 228, 247, 1) 100%); }
 
 #mainPuntaje {
   grid-area: mainPuntaje;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(354deg, RGBa(103, 61, 254, 1) 0%, RGBa(83, 107, 245, 1) 50%, RGBa(95, 228, 247, 1) 100%); }
+  align-items: center; }
 
 table, caption, tr, th, td {
   border: 1px solid black;
@@ -42,12 +68,15 @@ table, caption, tr, th, td {
 
 table {
   caption-side: top;
-  border-collapse: separate;
+  border-collapse: collapse;
   width: 90%;
-  margin: 50px 0px; }
+  margin: 50px 0px;
+  background: #8fe0ffb5;
+  box-shadow: 0 0 6px 0.5px black; }
 
-caption {
-  background-color: #0d4879; }
+table th {
+  background: #aed8ff;
+  border-bottom: 3px solid black; }
 
 #tablaFooter tr {
   text-align: center; }

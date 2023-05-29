@@ -1,7 +1,9 @@
+@import "general";
 @import "header";
-*{
-    padding: 0;
-    margin: 0;
+@import "footer";
+@import "variables";
+
+#bodyIndex{
 }
 .formBody{
     font-family: sans-serif;
@@ -10,10 +12,12 @@
     display: grid;
     grid-template-areas: 
     "header"
-    "contenedorForm";
-    grid-template-rows: 100px 1fr;
+    "contenedorForm"
+    "footer";
+    grid-template-rows: 100px 1fr 100px;
     grid-template-columns: auto;
     font-size: 1.1rem;
+    background: linear-gradient(354deg, RGBa(103, 61, 254, 1) 0%, RGBa(83, 107, 245, 1) 50%, RGBa(95, 228, 247, 1) 100%);
 }
 .completoBody{
     font-family: sans-serif;
@@ -21,10 +25,12 @@
     display: grid;
     grid-template-areas: 
     "header"
-    "mainIndex";
-    grid-template-rows: 100px auto;
+    "mainIndex"
+    "footer";
+    grid-template-rows: 100px auto 100px;
     grid-template-columns: auto;
     font-size: 1.1rem;
+    background: linear-gradient(45deg, rgb(197, 6, 255) 0%, rgb(13, 9, 121) 50%, rgb(81, 137, 255) 90%);
     
 }
 .bien{
@@ -63,6 +69,7 @@
     min-height: 150vh;
     display: grid;
     grid-template-areas: 
+    "categorias"
     "matematica"
     "lengua"
     "memoria"
@@ -72,8 +79,7 @@
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: auto;
     font-size: 1.1rem;
-    /* background: #7600bf; */
-    background: linear-gradient(45deg, RGBa(197,6,255,1) 0%, RGBa(13,9,121,1) 50%, RGBa(81,137,255,1) 90%);
+    /* background: linear-gradient(45deg, RGBa(197,6,255,1) 0%, RGBa(13,9,121,1) 50%, RGBa(81,137,255,1) 90%); */
 }
 .materia{
     margin: 3% 12%;
@@ -81,6 +87,24 @@
     min-height: 600px;
     padding: 3% 0%;
     box-shadow: 0px 0px 14px 3px #0000009e;
+}
+#index-categorias{
+    margin: 25px 0;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+#index-categorias a{
+    text-decoration: none;
+    color: black;
+    margin: 9px;
+}
+#index-categorias a:hover{
+    text-decoration: underline;
+    text-shadow: 0PX 0PX 12PX white;
 }
 /* -------------- MATEMATICA -------------- */
 #matematica{
@@ -93,6 +117,11 @@
 }
 #calculadoraValor1, #calculadoraValor2{
     width: 75px;
+}
+#matematica button{
+    background: $botonColor;
+    width: min-content + 2px;
+    width: 100px;
 }
 /* -------------- LENGUA -------------- */
 #lengua{
@@ -121,6 +150,12 @@
 }
 hr{
     width: 75%;
+}
+button{
+    background: $botonColor;
+    width: min-content + 2px;
+    width: 100px;
+    margin: 20px;
 }
 /* -------------- MEMORIA -------------- */
 #memoria{
@@ -391,7 +426,7 @@ label{
 #contenedorBotonFinal a{
     width: 94px;
     height: 94px;
-    background: #78bfff;
+    background: #000000;
     border-radius: 119%;
     text-decoration: none;
     color: white;
@@ -402,6 +437,10 @@ label{
     align-content: center;
     margin: 20px 0px;
     animation: sombra 2s infinite linear;
+}
+#contenedorBotonFinal a h3{
+    text-shadow: 0px 0px 3px black;
+    font-size: 37px;
 }
 @keyframes sombra{
     0%{
@@ -421,18 +460,6 @@ label{
     }
 }
 
-footer{
-    grid-area: footer;
-    margin-bottom: 0px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* background-color: RGB(255, 85, 85); */
-    margin: 20px 0px;
-
-}
 
 @media screen and (min-width: 0px) and (max-width: 768px){
     .materia{

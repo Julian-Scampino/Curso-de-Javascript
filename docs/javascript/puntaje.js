@@ -10,7 +10,7 @@ fetch("../json/personas.json")
     }
 })
 
-setInterval(() =>{
+setTimeout(() =>{
     ArrayPersonas.sort((a,b) =>{
         if(a.correctas > b.correctas){
             return -1;

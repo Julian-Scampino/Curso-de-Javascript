@@ -83,7 +83,7 @@ function mostrarResumen(){
         `
         total += subTotal
     })
-    tablaTotal.innerHTML = `<tr>Total: $${total}</tr>`
+    tablaTotal.innerHTML =  `<tr><td colspan="5">Total: $${total}</td></tr>`
 }
 // Botones para limpiar el carrito
 let botonesCompra = Array.from(document.getElementsByClassName("botonesCompra"))
