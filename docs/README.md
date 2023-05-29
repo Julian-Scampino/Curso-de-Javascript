@@ -17,7 +17,7 @@ Para usarlo se necesita:
 
 ### Para ver cambios de scss en tiempo real
 
-###  `watch-css"`
+###  `watch-css`
 
 ### Para compilar el scss
 

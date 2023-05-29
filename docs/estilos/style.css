@@ -464,5 +464,11 @@ label {
 
 @media screen and (min-width: 0px) and (max-width: 768px) {
   .materia {
-    margin: 3% 5%;
-    border-radius: 10%; } }
+    margin: 3% 0%;
+    border-radius: 1%; }
+  .claseCajaClick {
+    width: 80px;
+    height: 80px; }
+  #contenedorArgentina, #contenedorChile, #contenedorItalia {
+    width: 300px;
+    height: 150px; } }

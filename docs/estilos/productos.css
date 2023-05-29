@@ -122,3 +122,8 @@ caption {
   border: 3px solid black;
   text-shadow: 0px 0px 1px black;
   letter-spacing: 1px; }
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  table {
+    width: 100%;
+    font-size: 12px; } }
