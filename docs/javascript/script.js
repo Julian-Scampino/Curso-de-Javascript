@@ -1,3 +1,5 @@
+Swal.fire('Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript')
+
 // ------ Formulario de Usuario ------ //
 let nuevoUsuario = {}
 let formUsuario = document.getElementById('formUsuario')
@@ -55,12 +57,13 @@ calculadora.addEventListener('submit', (event) =>{
 let preguntasMate = Array.from(document.getElementsByClassName('preguntasMate'))
 let respuestasMate = ["9", "2", "3", "15"]
 preguntasMate.forEach((element, index) =>{
-    element.addEventListener('change', () =>{
-        if(element.value == respuestasMate[index]){
-            correcto(element)
+    element.addEventListener('submit', (event) =>{
+        event.preventDefault()
+        if(event.target[0].value == respuestasMate[index]){
+            correcto(event.target[0])
             toast ()
         } else{
-            incorrecto(element)
+            incorrecto(event.target[0])
         }
     })
 })
