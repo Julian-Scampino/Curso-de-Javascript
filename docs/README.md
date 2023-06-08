@@ -20,8 +20,8 @@ Para ver el trabajo: https://julian-scampino.github.io/Curso-de-Javascript/
 
 ### Para ver cambios de scss en tiempo real
 
-###  `watch-css`
+###  `npm run watch-css`
 
 ### Para compilar el scss
 
-###  `build-css`
+###  `npm run build-css`
