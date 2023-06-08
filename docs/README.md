@@ -6,8 +6,10 @@ Conteste alguno de los desafíos, se guardarán la cantidad de desafíos acertad
 Hay una 3ra página para comprar libros educativos (ficticio).  
 
 Para usarlo se necesita:  
-1 - Un servidor o un simulador como Live Sever porque tiene un fetch a un archivo .json, de lo contrario no funcionará correctamente la pagina de PUNTAJE.  
+1 - Un servidor o un simulador como Live Sever porque tiene un fetch a un archivo .json, de lo contrario no funcionará correctamente la página de PUNTAJE.  
 
+
+Para ver el trabajo: https://julian-scampino.github.io/Curso-de-Javascript/
 
 ## Uso de Nodejs para SCSS
 
