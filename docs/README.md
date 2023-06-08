@@ -8,8 +8,9 @@ Hay una 3ra página para comprar libros educativos (ficticio).
 Para usarlo se necesita:  
 1 - Un servidor o un simulador como Live Sever porque tiene un fetch a un archivo .json, de lo contrario no funcionará correctamente la página de PUNTAJE.  
 
-
 Para ver el trabajo: https://julian-scampino.github.io/Curso-de-Javascript/
+
+![Educariva](https://github.com/Julian-Scampino/Curso-de-Javascript/assets/100171813/5b14f394-de61-47e0-810b-1c179b6da4d7)
 
 ## Uso de Nodejs para SCSS
 
