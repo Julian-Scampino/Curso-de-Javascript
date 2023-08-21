@@ -3,7 +3,6 @@
 @import "footer";
 @import "variables";
 #bodyProductos{
-    font-family: sans-serif;
     width: auto;
     min-height: 100vh;
     display: grid;
@@ -11,7 +10,7 @@
     "header"
     "mainProductos"
     "footer";
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: auto 1fr 100px;
     grid-template-columns: auto;
     font-size: 1.1rem;
     background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%);
@@ -40,10 +39,14 @@ div#resumenCompra {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    opacity: 30%;
 }
 .botonesOferta{
-    width: 150px;
     background: $azul;
+    width: min-content;
+    padding: 2%;
+    margin-top: 3%;
+    text-transform: uppercase;
 }
 
 .productosOferta img{
@@ -94,5 +97,12 @@ caption{
     table{
         width: 100%;
         font-size: 12px;
+    }
+    header{
+        flex-direction: column;
+    }
+    header div ul{
+    display: flex;
+    flex-direction: row;
     }
 }

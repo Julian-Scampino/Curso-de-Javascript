@@ -42,6 +42,9 @@ imagenesClick.forEach((element) =>{
 let botonAnimacion = document.getElementById('botonAnimacion')
 let contenedorDeImagenes = document.getElementById("contenedorDeImagenes")
 botonAnimacion.addEventListener('click', () =>{
+    botonAnimacion.style.display = "none"
+    let contenedorMioLoader = document.getElementById("contenedorMioLoader");
+    contenedorMioLoader.className ="contenedorMioLoaderAparecer"
     textoClick.innerText = ""
     if(contenedorDeImagenes.className != "bloquearClickContenedorMemoria"){
         contenedorDeImagenes.classList.add("bloquearClickContenedorMemoria")
@@ -74,7 +77,10 @@ botonAnimacion.addEventListener('click', () =>{
         if(contenedorDeImagenes.className == "bloquearClickContenedorMemoria"){
             contenedorDeImagenes.classList.remove("bloquearClickContenedorMemoria")
         }
-        textoClick.innerText = "auto"
+        textoClick.innerText = arrayMemoria[0]
+        botonAnimacion.style.display = ""
+        contenedorMioLoader.className ="contenedorMioLoaderEscondido"
+        
     }, 7000)
 })
     

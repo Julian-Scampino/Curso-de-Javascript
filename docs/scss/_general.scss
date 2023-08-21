@@ -1,6 +1,10 @@
+@import "variables";
 *{
     padding: 0;
     margin: 0;
+}
+html{
+    font-family: sans-serif;
 }
 body{
     text-align: center;
@@ -8,5 +12,12 @@ body{
 } 
 button{
     border: 1px solid black;
-    box-shadow: 0 0 5px 0.5px rgba(0, 0, 0, 0.502);
+    box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.502);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    background: $botonColor;
+    width: min-content;
+    padding: 0 3%;
+    margin: 15px
 }

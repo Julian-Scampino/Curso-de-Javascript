@@ -1,3 +1,10 @@
+let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
+document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`
+document.querySelector(".header-btn-logout").addEventListener("click", ()=>{
+    localStorage.clear()
+    window.location.href = "registrar.html"
+})
+
 let resumenCompra = document.getElementById('tablaResumen')
 let tablaTotal = document.getElementById("tablaFooter")
 let arrayCompra = JSON.parse(localStorage.getItem('carrito')) ?? []
@@ -66,6 +73,8 @@ productosDom.forEach((element) => {
 })
 // Imprimiendo los valores del carrito en el html
 function mostrarResumen(){
+    //Cambio estetico de css de opacity para la tabla de la compra
+    document.getElementById("resumenCompra").style.opacity = "100%"
     resumenCompra.innerHTML = ""
     let subTotal
     let total = 0

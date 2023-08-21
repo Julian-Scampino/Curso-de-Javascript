@@ -1,35 +1,35 @@
-let ArrayPersonas = []
+let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"));
+document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`;
+document.querySelector(".header-btn-logout").addEventListener("click", () => {
+	localStorage.clear();
+	window.location.href = "./registrar.html";
+});
 
-fetch("../json/personas.json")
-.then(response => response.json())
-.then(personas => {
-    ArrayPersonas = personas
-    if(localStorage.getItem("usuarioLocal") != null){
-        let traerNuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
-        ArrayPersonas.push(traerNuevoUsuario)
-    }
-})
+let ArrayPersonas = [ {id: 1, nombre: "Juan", apellido: "Aguirre", correctas: 3}, {id: 2, nombre: "Ana", apellido: "Rodríguez", correctas: 1}, {id: 3, nombre: "Facundo", apellido: "González", correctas: 5}, ];
+if (localStorage.getItem("usuarioLocal") != null) {
+	let traerNuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"));
+	traerNuevoUsuario.class = "Nuevo";
+	ArrayPersonas.push(traerNuevoUsuario);
+}
 
-setTimeout(() =>{
-    ArrayPersonas.sort((a,b) =>{
-        if(a.correctas > b.correctas){
-            return -1;
-        }
-        if(a.correctas > b.correctas){
-            return 1;
-        }
-        return 0;
-    });
-    let tablaBodyParticipantes = document.getElementById('tablaBodyParticipantes')
-    tablaBodyParticipantes.innerHTML = ""
-    ArrayPersonas.forEach((persona) => {
-        let {nombre, apellido, correctas} = persona
-        tablaBodyParticipantes.innerHTML += `
-            <tr>
+ArrayPersonas.sort((a, b) => {
+	if (a.correctas > b.correctas) {
+		return -1;
+	}
+	if (a.correctas > b.correctas) {
+		return 1;
+	}
+	return 0;
+});
+let tablaBodyParticipantes = document.getElementById("tablaBodyParticipantes");
+tablaBodyParticipantes.innerHTML = "";
+ArrayPersonas.forEach((persona) => {
+	let {nombre, apellido, correctas} = persona;
+	tablaBodyParticipantes.innerHTML += `
+            <tr ${persona?.class == "Nuevo" ? 'class="Nuevo"' : 'class=""'}>
                 <td>${nombre}</td>
                 <td>${apellido}</td>
                 <td>${correctas}</td>
              </tr>
-        `
-    })
-}, 500)
+        `;
+});

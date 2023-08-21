@@ -1,33 +1,17 @@
-Swal.fire('Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript')
-
-// ------ Formulario de Usuario ------ //
-let nuevoUsuario = {}
-let formUsuario = document.getElementById('formUsuario')
-formUsuario.addEventListener('submit', (event) => {
-    event.preventDefault()
-    let inputNombreUsuario = (document.getElementById('inputNombreUsuario').value).split(' ')[0]
-    let inputApellidoUsuario = (document.getElementById('inputNombreUsuario').value).split(' ')[0]
-    nuevoUsuario.nombre=inputNombreUsuario;
-    nuevoUsuario.apellido=inputApellidoUsuario;
-    nuevoUsuario.correctas= 0;
-    historiaPersonal.reset()
-    if(inputNombreUsuario != "" && inputApellidoUsuario != "" ){
-        document.getElementById("mainIndex").classList.remove("esconderseMain")
-        document.getElementById("contenedorForm").classList.add("esconderseMain")
-        document.getElementById("bodyIndex").classList.replace("formBody", "completoBody")
-    }
-    /* let bodyEducativo = document.querySelector('.completoBody').style.background= "linear-gradient(45deg, rgb(197, 6, 255, 1) 0%, rgb(13, 9, 121, 1) 50%, rgb(81, 137, 255, 1) 90%)" */
+let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
+nuevoUsuario.correctas = 0
+document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`
+document.querySelector(".header-btn-logout").addEventListener("click", ()=>{
+    localStorage.clear()
+    window.location.href = "./secciones/registrar.html"
 })
-
-
-
 // --------------------------------------- Matematica --------------------------------------- //
 // ---- Calculadora ---- //
 let calculadora = document.getElementById("calculadora")
 calculadora.addEventListener('submit', (event) =>{
     event.preventDefault()
     let calculadoraValor1 = parseFloat(document.getElementById('calculadoraValor1').value)
-    let operador = document.getElementById('selector').value
+    let operador = event.submitter.value
     let calculadoraValor2 = parseFloat(document.getElementById('calculadoraValor2').value)
     let resultadoCalculadora
     switch(operador) {
@@ -40,7 +24,7 @@ calculadora.addEventListener('submit', (event) =>{
         case "/":
             resultadoCalculadora = calculadoraValor1/calculadoraValor2
           break;
-        case "*":
+        case "x":
             resultadoCalculadora = calculadoraValor1*calculadoraValor2
         break;
     }
@@ -77,7 +61,7 @@ historiaPersonal.addEventListener('submit', (event) => {
     let adjetivo1 = document.getElementById('adjetivo').value
     let verbo1 = document.getElementById('verbo').value
     let historiaPersonalTexto = document.getElementById('historiaPersonalTexto')
-    historiaPersonalTexto.innerText = `Hola. Mi nombre es ${sustantivo1} (sustantivo). Soy una persona ${adjetivo1} (adjetivo). Me gusta mucho ${verbo1} (verbo).`
+    historiaPersonalTexto.innerHTML = `Hola. Mi nombre es <span class="lengua-historiaPersonal">${sustantivo1}</span> (sustantivo). Soy una persona <span class="lengua-historiaPersonal">${adjetivo1}</span> (adjetivo). Me gusta mucho <span class="lengua-historiaPersonal">${verbo1}</span> (verbo).`
     historiaPersonal.reset()
 })
 // ---- Preguntas sustantivos, verbo, adjetivos ---- //
@@ -122,11 +106,15 @@ botonRosa.addEventListener('click', () =>{
 })
 // Bloquee la opcion de colorear por default.Esto desbloquea la posibilidad de colorear las banderas luego que se hace click en algun color
 let botonesColores = document.querySelectorAll(".botonesColores")
-botonesColores.forEach((element)=>{
-    element.addEventListener('click',()=>{
-        document.querySelector("#contenedorDeBanderas").style.pointerEvents = "auto"
+Array.from(botonesColores).forEach((element, index)=>{
+    element.addEventListener('click',(event)=>{
+        document.querySelector("#contenedorDeBanderas").style.pointerEvents = "auto";
+        botonesColores.forEach((element2)=>{
+            element2.style.opacity = "50%"
+        })
+        element.style.opacity = "100%"
+        
     })
-
 })
 
 let respuestasArgentina = ["cajasArgentina colorCeleste", "cajasArgentina colorBlanco",  "cajasArgentina colorCeleste"]
@@ -189,7 +177,7 @@ radios.forEach((element) => {
         }
     })
 })
-// --- Boton Fianl --- //
+// --- Boton Final --- //
 let botonFinal = document.getElementById("botonFinal")
 botonFinal.addEventListener('click', (e) =>{
     localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario))

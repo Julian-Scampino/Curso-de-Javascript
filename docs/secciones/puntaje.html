@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../estilos/style.css" />
-        <link rel="stylesheet" href="../estilos/puntaje.css" />
-        <meta
-            name="description"
-            content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad."
-        />
-        <meta
-            name="keywords"
-            content="educativa, cursos, productos, aprendizaje, online"
-        />
-        <title>Educativa-Puntaje</title>
-    </head>
-    <body id="bodyPuntaje">
-        <header>
-            <a href="../index.html"><h1>Educativa</h1></a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="puntaje.html">Puntaje</a>
-                    </li>
-                    <li>
-                        <a href="productos.html">Productos</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main id="mainPuntaje">
-            <h3>Si quieres ver tu puntaje ve al inicio e ingresa tus datos</h3>
-            <div id="participantes">
-                <table>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Correctas</th>
-                    </tr>
-                    <tbody id="tablaBodyParticipantes"></tbody>
-                </table>
-            </div>
-        </main>
-        <footer>
-            <h2>Alumno: Julián Scampino</h2>
-        </footer>
-        <script src="../javascript/puntaje.js"></script>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../estilos/puntaje.css" />
+		<meta name="description" content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
+		<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online" />
+		<title>Educativa-Puntaje</title>
+		<script>
+			if (!localStorage.getItem("usuarioLocal")) {
+				window.location.href = "registrar.html";
+			}
+		</script>
+	</head>
+	<body id="bodyPuntaje">
+		<header>
+			<a href="../index.html" class="header-title">Educativa</a>
+			<nav>
+				<ul>
+					<li>
+						<a href="../index.html">Inicio</a>
+					</li>
+					<li>
+						<a href="./puntaje.html">Puntaje</a>
+					</li>
+					<li>
+						<a href="./productos.html">Productos</a>
+					</li>
+				</ul>
+			</nav>
+			<div>
+				<p>Usuario:</p>
+				<p class="nav-user-text"></p>
+				<button class="header-btn-logout">Salir</button>
+			</div>
+		</header>
+		<main id="mainPuntaje">
+			<h3>Si quieres ver tu puntaje ve al inicio, ingresa tus datos y completa los desafíos</h3>
+			<div id="participantes">
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Apellido</th>
+							<th>Correctas</th>
+						</tr>
+					</thead>
+					<tbody id="tablaBodyParticipantes"></tbody>
+				</table>
+			</div>
+		</main>
+		<footer>
+			<h2>Alumno: Julián Scampino</h2>
+		</footer>
+		<script src="../javascript/minify/puntaje.js"></script>
+	</body>
 </html>

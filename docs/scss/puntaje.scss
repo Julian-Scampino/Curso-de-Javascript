@@ -3,7 +3,6 @@
 @import "footer";
 @import "variables";
 #bodyPuntaje{
-    font-family: sans-serif;
     width: auto;
     min-height: 100vh;
     display: grid;
@@ -11,7 +10,7 @@
     "header"
     "mainPuntaje"
     "footer";
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: auto 1fr 100px;
     grid-template-columns: auto;
     font-size: 1.1rem;
     background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%);
@@ -45,4 +44,27 @@ table th{
 }
 #tablaFooter tr{
     text-align: center
+}
+.Nuevo{
+    background-color: #148aff;
+}
+tbody tr:not(.Nuevo){
+    opacity: 50%;
+}
+.Nuevo>td:nth-child(1)::before{
+
+    content: '✅';
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px){
+    .swal2-container.swal2-center>.swal2-popup {
+        font-size: 13px;;
+    }
+    header{
+        flex-direction: column;
+    }
+    header div ul{
+        display: flex;
+        flex-direction: row;
+    }
 }
