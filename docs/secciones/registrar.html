@@ -1,74 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../estilos/style.css" />
-		<meta name="description" content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
-		<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online, registrarse" />
-		<title>Educativa-Registrarse</title>
-	</head>
-	<body id="bodyRegistrar" class="formBody">
-		<header>
-			<a href="../index.html" class="header-title">
-				Educativa
-			</a>
-			<nav>
-				<ul>
-					<li>
-						<a href="../index.html">Inicio</a>
-					</li>
-					<li>
-						<a href="./puntaje.html">Puntaje</a>
-					</li>
-					<li>
-						<a href="./productos.html">Productos</a>
-					</li>
-				</ul>
-			</nav>
-			<div style="visibility: hidden">
-				<p>Usuario</p>
-				<p>asdfasdfsadf</p>
-				<button>Salir</button>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="../estilos/style.css" />
+	<meta name="description"
+		content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
+	<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online, registrarse" />
+	<title>Educativa-Registrarse</title>
+</head>
+<body id="bodyRegistrar" class="formBody">
+	<header>
+		<a href="../index.html" class="header-title">
+			Educativa
+		</a>
+	</header>
+	<!-- ----------- Formulario de usuario ----------- -->
+	<main id="contenedorForm">
+		<h2>Esta es una plataforma educativa</h2>
+		<form action="" id="formUsuario">
+			<label for="inputNombreUsuario">Nombre</label>
+			<input type="text" name="nombre" id="inputNombreUsuario" required />
+			<label for="inputApellidoUsuario">Apellido</label>
+			<input type="text" name="apellido" id="inputApellidoUsuario"
+				required />
+			<div id="contenedorGeneral-avatares-registrar">
+				<div class="contenedor-avatarMasInputRadio-registrar">
+					<div class="contenedor-avatar-registrar">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-hombre-cambiado.png" alt="avatar-hombre">
+					</div>
+					<div class="contenedor-radio-label-vertical">
+						<label for="avatar-hombre"></label>
+						<input type="radio" name="genero" value="hombre" id="avatar-hombre" required/>
+					</div>
+				</div>
+				<div class="contenedor-avatarMasInputRadio-registrar">
+					<div class="contenedor-avatar-registrar">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-mujer-cambiado.png" alt="avatar-mujer">
+					</div>
+					<div class="contenedor-radio-label-vertical">
+						<label for="avatar-mujer"></label>
+						<input type="radio" name="genero" value="mujer" id="avatar-mujer" required/>
+					</div>
+				</div>
 			</div>
-		</header>
-		<!-- ----------- Formulario de usuario ----------- -->
-		<main id="contenedorForm">
-			<h2>Esta es una plataforma educativa</h2>
-			<form action="" id="formUsuario">
-				<h4>Escriba su nombre y apellido para empezar</h4>
-				<input type="text" name="" id="inputNombreUsuario" required />
-				<input type="text" name="" id="inputApellidoUsuario" required />
-				<button type="submit">ENVIAR</button>
-			</form>
-			<h4>(Tus datos NO serán guardados en bases de datos)</h4>
-		</main>
-		<footer>
-			<h4>Alumno: Julián Scampino</h4>
-		</footer>
-		<!-- ----------- FOOTER ----------- -->
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
-		<script>
-			if (localStorage.getItem("usuarioLocal")) {
-				window.location.href = "../index.html";
-			} else {
-				let nuevoUsuario = {};
-				let formUsuario = document.getElementById("formUsuario");
-				formUsuario.addEventListener("submit", (event) => {
-					event.preventDefault();
-					let inputNombreUsuario = document.getElementById("inputNombreUsuario").value.split(" ")[0];
-					let inputApellidoUsuario = document.getElementById("inputNombreUsuario").value.split(" ")[0];
-					nuevoUsuario.nombre = inputNombreUsuario;
-					nuevoUsuario.apellido = inputApellidoUsuario;
-					nuevoUsuario.correctas = 0;
-					localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario));
-					if (inputNombreUsuario != "" && inputApellidoUsuario != "") {
-						window.location.href = "../index.html";
-					}
-				});
-			}
-			Swal.fire("Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript");
-		</script>
-	</body>
+			<button type="submit">ENVIAR</button>
+		</form>
+		<h4>(Tus datos NO serán guardados en bases de datos)</h4>
+	</main>
+	<footer>
+		<h4>Alumno: Julián Scampino</h4>
+	</footer>
+	<!-- ----------- FOOTER ----------- -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
+	<script>
+		if (localStorage.getItem("usuarioLocal")) {
+			window.location.href = "../index.html";
+		} else {
+			let nuevoUsuario = {};
+			let formUsuario = document.getElementById("formUsuario");
+			formUsuario.addEventListener("submit", (event) => {
+				event.preventDefault();
+				let formData = new FormData(formUsuario);
+				let data = {}
+				for (let [key, value] of formData) {
+    				nuevoUsuario[key] = value;
+  				}
+				  nuevoUsuario.correctas = 0;
+				localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario));
+				if (inputNombreUsuario != "" && inputApellidoUsuario != "") {
+					window.location.href = "../index.html";
+				}
+			});
+		}
+		let contenedorAvatares = Array.from(document.getElementsByClassName("img-avatar-registrar"))
+		contenedorAvatares.forEach((element1, index1)=>{
+			element1.addEventListener("click" , (element1)=>{
+				element1.target.parentElement.parentElement.children[1].children[1].checked = true
+				contenedorAvatares.forEach((element2, index2)=>{
+					element2.style.opacity = "50%"
+				})
+				element1.target.style.opacity = "100%"
+		})
+		})
+		Swal.fire("Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript");
+	</script>
+</body>
+
 </html>

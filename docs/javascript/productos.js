@@ -1,5 +1,6 @@
 let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
 document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`
+document.querySelector("#header-avatar").src =`../imagenes/avatar-${nuevoUsuario.genero}-cambiado.png`
 document.querySelector(".header-btn-logout").addEventListener("click", ()=>{
     localStorage.clear()
     window.location.href = "registrar.html"
@@ -34,13 +35,12 @@ const mostrarOFerta = () =>{
     contendedorOferta.innerHTML = ""
     arrayOferta.forEach((element) => {
         contendedorOferta.innerHTML += `
-        <div class="productosOferta" id=${element.id}>
-        <img src="../imagenes/${element.id}.jpg" alt="">
-        <h3>${element.nombre}</h3>
-        <p>Autor: ${element.autor}</p>
-        <p>Precio: $${element.precio}</p>
-        <p>Stock: ${element.stock}</p>
-        <button class="botonesOferta" id="botonProducto${element.id}">Comprar</button>
+        <div class="card-productos" id=${element.id}>
+        <img class="card-productos-img"src="../imagenes/${element.id}.jpg" alt="">
+        <h3 class="card-productos-titulo">${element.nombre}</h3>
+        <p class="card-productos-stock">Stock: ${element.stock}</p>
+        <p class="card-productos-precio">$${element.precio}</p>
+        <button class="card-productos-boton" id="botonProducto${element.id}">Comprar</button>
         </div>
         `
     })
@@ -48,7 +48,7 @@ const mostrarOFerta = () =>{
 
 mostrarOFerta()
 // Agregando productos al carrito, controlando el stock y subiendolos al localstorage
-let productosDom = Array.from(document.getElementsByClassName("botonesOferta"))
+let productosDom = Array.from(document.getElementsByClassName("card-productos-boton"))
 productosDom.forEach((element) => {
     element.addEventListener('click', (e) =>{
         e.preventDefault()
@@ -84,7 +84,6 @@ function mostrarResumen(){
         resumenCompra.innerHTML += `
         <tr>
                 <td>${element.nombre}</td>
-                <td>${element.autor}</td>
                 <td>$${element.precio}</td>
                 <td>${element.unidades}</td>
                 <td>$${subTotal}</td>

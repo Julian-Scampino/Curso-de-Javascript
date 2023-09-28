@@ -1,13 +1,13 @@
 let nuevoUsuario=JSON.parse(localStorage.getItem("usuarioLocal"));document.querySelector(".nav-user-text").innerText=`${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`,document.querySelector(".header-btn-logout").addEventListener("click",()=>{localStorage.clear(),window.location.href="registrar.html"});let resumenCompra=document.getElementById("tablaResumen"),tablaTotal=document.getElementById("tablaFooter"),arrayCompra=JSON.parse(localStorage.getItem("carrito"))??[],indice;class libros{constructor(r,e,t,a,o){this.id=r,this.nombre=e,this.autor=t,this.precio=a,this.unidades=1,this.stock=o}}const libro1=new libros(1,"Matem\xe1tica","Fern\xe1ndez",5e3,9),libro2=new libros(2,"Lengua","Mart\xednez",4e3,6),libro3=new libros(3,"Historia","P\xe9rez",3e3,2),libro4=new libros(4,"Geograf\xeda","S\xe1nchez",4500,3);let arrayOferta=[libro1,libro2,libro3,libro4];localStorage.getItem("carrito")&&mostrarResumen();const mostrarOFerta=()=>{let r=document.getElementById("contendedorOferta");r.innerHTML="",arrayOferta.forEach(e=>{r.innerHTML+=`
-        <div class="productosOferta" id=${e.id}>
+        <div class="card-productos" id=${e.id}>
         <img src="../imagenes/${e.id}.jpg" alt="">
         <h3>${e.nombre}</h3>
         <p>Autor: ${e.autor}</p>
         <p>Precio: $${e.precio}</p>
         <p>Stock: ${e.stock}</p>
-        <button class="botonesOferta" id="botonProducto${e.id}">Comprar</button>
+        <button class="card-productos-boton" id="botonProducto${e.id}">Comprar</button>
         </div>
-        `})};mostrarOFerta();let productosDom=Array.from(document.getElementsByClassName("botonesOferta"));function mostrarResumen(){document.getElementById("resumenCompra").style.opacity="100%",resumenCompra.innerHTML="";let r,e=0;JSON.parse(localStorage.getItem("carrito")).forEach(t=>{r=parseFloat(t.precio)*parseFloat(t.unidades),resumenCompra.innerHTML+=`
+        `})};mostrarOFerta();let productosDom=Array.from(document.getElementsByClassName("card-productos-boton"));function mostrarResumen(){document.getElementById("resumenCompra").style.opacity="100%",resumenCompra.innerHTML="";let r,e=0;JSON.parse(localStorage.getItem("carrito")).forEach(t=>{r=parseFloat(t.precio)*parseFloat(t.unidades),resumenCompra.innerHTML+=`
         <tr>
                 <td>${t.nombre}</td>
                 <td>${t.autor}</td>
