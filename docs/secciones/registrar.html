@@ -4,10 +4,11 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="../estilos/style.css" />
+	<link rel="stylesheet" href="../estilos/registrar.css" />
 	<meta name="description"
 		content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
 	<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online, registrarse" />
+	<link rel="icon" href="../favicon.png">
 	<title>Educativa-Registrarse</title>
 </head>
 <body id="bodyRegistrar" class="formBody">
@@ -27,21 +28,21 @@
 				required />
 			<div id="contenedorGeneral-avatares-registrar">
 				<div class="contenedor-avatarMasInputRadio-registrar">
-					<div class="contenedor-avatar-registrar">
-						<img class="img-avatar-registrar" src="../imagenes/avatar-hombre-cambiado.png" alt="avatar-hombre">
-					</div>
+					
 					<div class="contenedor-radio-label-vertical">
-						<label for="avatar-hombre"></label>
-						<input type="radio" name="genero" value="hombre" id="avatar-hombre" required/>
+						<label for="avatar-hombre"><div class="contenedor-avatar-registrar">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-hombre-cambiado-chico200px.png" alt="avatar-hombre">
+					</div></label>
+						<input class="form-radio" type="radio" name="genero" value="hombre" id="avatar-hombre" required/>
 					</div>
 				</div>
 				<div class="contenedor-avatarMasInputRadio-registrar">
-					<div class="contenedor-avatar-registrar">
-						<img class="img-avatar-registrar" src="../imagenes/avatar-mujer-cambiado.png" alt="avatar-mujer">
-					</div>
+					
 					<div class="contenedor-radio-label-vertical">
-						<label for="avatar-mujer"></label>
-						<input type="radio" name="genero" value="mujer" id="avatar-mujer" required/>
+						<label for="avatar-mujer"><div class="contenedor-avatar-registrar">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-mujer-cambiado-chico200px.png" alt="avatar-mujer">
+					</div></label>
+						<input class="form-radio" type="radio" name="genero" value="mujer" id="avatar-mujer" required/>
 					</div>
 				</div>
 			</div>
@@ -49,43 +50,12 @@
 		</form>
 		<h4>(Tus datos NO serán guardados en bases de datos)</h4>
 	</main>
+	<!-- ----------- FOOTER ----------- -->
 	<footer>
 		<h4>Alumno: Julián Scampino</h4>
 	</footer>
-	<!-- ----------- FOOTER ----------- -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
-	<script>
-		if (localStorage.getItem("usuarioLocal")) {
-			window.location.href = "../index.html";
-		} else {
-			let nuevoUsuario = {};
-			let formUsuario = document.getElementById("formUsuario");
-			formUsuario.addEventListener("submit", (event) => {
-				event.preventDefault();
-				let formData = new FormData(formUsuario);
-				let data = {}
-				for (let [key, value] of formData) {
-    				nuevoUsuario[key] = value;
-  				}
-				  nuevoUsuario.correctas = 0;
-				localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario));
-				if (inputNombreUsuario != "" && inputApellidoUsuario != "") {
-					window.location.href = "../index.html";
-				}
-			});
-		}
-		let contenedorAvatares = Array.from(document.getElementsByClassName("img-avatar-registrar"))
-		contenedorAvatares.forEach((element1, index1)=>{
-			element1.addEventListener("click" , (element1)=>{
-				element1.target.parentElement.parentElement.children[1].children[1].checked = true
-				contenedorAvatares.forEach((element2, index2)=>{
-					element2.style.opacity = "50%"
-				})
-				element1.target.style.opacity = "100%"
-		})
-		})
-		Swal.fire("Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript");
-	</script>
+	<script src="../javascript/registrar.js"></script>
 </body>
 
 </html>
