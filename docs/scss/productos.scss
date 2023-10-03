@@ -28,7 +28,7 @@ main{
 .card-productos {
     border: 1px solid black;
     text-align: center;
-    border-radius: 5%;
+    border-radius: 10px;
     background: #a5cdff;
     box-shadow: 0 0 10px 1px #00000036;
 }
@@ -48,10 +48,13 @@ main{
 .card-productos-img{
     width: 150px;
     height: 200px;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 .card-productos-stock {
     color: #000000a3;
+}
+.card-productos-boton{
+    border-radius: 500px;
 }
 
 .card-productos-precio {
@@ -98,7 +101,7 @@ caption{
     margin-right: 17px;
     color: #000000;
     background: $azul;
-    border-radius: 14px;
+    border-radius: 500px;
     border: 1px solid black;
     text-shadow: 0px 0px 1px black;
     letter-spacing: 1px;

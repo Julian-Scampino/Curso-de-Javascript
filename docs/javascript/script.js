@@ -1,5 +1,6 @@
 let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
 nuevoUsuario.correctas = 0
+nuevoUsuario.fin = false
 document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`
 document.querySelector("#header-avatar").src =`./imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico200px.png`
 document.querySelector(".header-btn-logout").addEventListener("click", ()=>{
@@ -181,6 +182,7 @@ radios.forEach((element) => {
 // --- Boton Final --- //
 let botonFinal = document.getElementById("botonFinal")
 botonFinal.addEventListener('click', (e) =>{
+    nuevoUsuario.fin = true
     localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario))
 })
 
@@ -207,5 +209,6 @@ function toast (){
         }
     }).showToast();
     nuevoUsuario.correctas++
+    document.querySelector("#header-puntos").innerText = `Puntos: ${nuevoUsuario.correctas}`
 }
 

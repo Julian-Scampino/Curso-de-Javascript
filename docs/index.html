@@ -32,10 +32,25 @@
 					</li>
 				</ul>
 			</nav>
-			<div>
-				<img id="header-avatar" src="" alt="avatar" >
-				<p class="nav-user-text"></p>
-				<button class="header-btn-logout">Salir</button>
+			<div id="header-contenedorTotal-usuario">
+				<div id="header-contenedor-avatarNombre">
+					<img id="header-avatar" src="" alt="avatar">
+					<p class="nav-user-text"></p>
+					<svg id="header-flecha-submenu" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+						<path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+					  </svg>
+				</div>
+				<!-- <button class="header-btn-logout">Salir</button> -->
+				<ul id="header-infoLogout">
+					<li id="header-puntos">Puntos: 0</li>
+					<li class="header-btn-logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+							fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+							<path fill-rule="evenodd"
+								d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+						</svg> Salir</li>
+				</ul>
 			</div>
 		</header>
 		<main id="mainIndex">
@@ -60,12 +75,24 @@
 							</div>
 							<div>
 								<div>
-									<input class="botonesCalculadora" type="submit" name="sumar" value="+" />
-									<input class="botonesCalculadora" type="submit" name="restar" value="-" />
+									<!-- <input class="botonesCalculadora" type="submit" name="sumar" value="+" /> -->
+									<button class="botonesCalculadora" type="submit" name="sumar" value="+" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+									  </svg></button>
+									<!-- <input class="botonesCalculadora" type="submit" name="restar" value="-" /> -->
+									<button class="botonesCalculadora" type="submit" name="restar" value="-" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+									  </svg></button>
 								</div>
 								<div>
-									<input class="botonesCalculadora" type="submit" name="multiplicar" value="x" />
-									<input class="botonesCalculadora" type="submit" name="dividir" value="/" />
+									<!-- <input class="botonesCalculadora" type="submit" name="multiplicar" value="x" /> -->
+									<button class="botonesCalculadora" type="submit" name="multiplicar" value="x" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+									  </svg></button>
+									<!-- <input class="botonesCalculadora" type="submit" name="dividir" value="/" /> -->
+									<button class="botonesCalculadora" type="submit" name="dividir" value="/" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-slash-circle-fill" viewBox="0 0 16 16">
+										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/>
+									  </svg></button>
 								</div>
 							</div>
 						</form>
@@ -132,7 +159,7 @@
 						</div>
 						<button type="submit" id="historiaPersonalBoton">Listo</button>
 					</form>
-					<p id="historiaPersonalTexto">Contesta las preguntas y este texto cambiará</p>
+					<p id="historiaPersonalTexto">(Contesta las preguntas y este texto cambiará)</p>
 				</div>
 				<hr />
 				<div class="hijosLengua" id="ejercicioLengua">

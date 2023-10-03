@@ -7,7 +7,7 @@ document.querySelector(".header-btn-logout").addEventListener("click", () => {
 });
 
 let ArrayPersonas = [ {id: 1, nombre: "Juan", apellido: "Aguirre", correctas: 3}, {id: 2, nombre: "Ana", apellido: "Rodríguez", correctas: 1}, {id: 3, nombre: "Facundo", apellido: "González", correctas: 5}, ];
-if (localStorage.getItem("usuarioLocal") != null) {
+if (localStorage.getItem("usuarioLocal") != null && JSON.parse(localStorage.getItem("usuarioLocal")).fin == true ) {
 	let traerNuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"));
 	traerNuevoUsuario.class = "Nuevo";
 	ArrayPersonas.push(traerNuevoUsuario);

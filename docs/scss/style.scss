@@ -71,7 +71,8 @@
 }
 #index-categorias a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: #ffffff;
+    text-shadow: 0 0 9px #00000052;
 }
 #index-categorias a:hover{
     text-decoration: underline;
@@ -100,6 +101,7 @@
 #calculadora{
     display: flex;
     flex-direction: row;
+    gap: 3px;
 }
 #calculadora div{
     display: flex;
@@ -114,19 +116,44 @@
 #calculadoraValor1, #calculadoraValor2{
     width: 75px;
 }
-.botonesCalculadora{
-    width: 20px;
+#matematica #contenedorCaluladora .botonesCalculadora{
+    width: 21px;
     height: 21px;
-    font-size: 16px;
-    background: #ff5555;
+    /* font-size: 16px; */
+    background: #ff555500;
     border: none;
     margin: 1px;
-    padding: 3px;
-    border-radius: 5px;
+    padding: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
 }
-#matematica button{
-    background: $botonColor;
+#matematica #contenedorCaluladora .botonesCalculadora svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 1px #00000021;
+    color: #ff5555;
+}
+div#ejercicioMate input {
+    border-radius: 500px;
+    border: 1px solid #0000008c;
+    /* width: 142px; */
+    box-shadow: 0 0 5px 1px #00000024;
+}
+#matematica button {
     width: 100px;
+    background: #f87575;
+    width: 67px;
+    padding: 0.2% 2%;
+    box-shadow: 0 0 6px 0.5px #00000026;
+    border: 1px solid #0000007a;
+    border-radius: 73px;
+    font-size: 12px;
+    text-align: center;
 }
 #contenedorCaluladora p {
     color: white;
@@ -164,7 +191,31 @@
 }
 hr{
     width: 75%;
+    border: none;
+    height: 1px;
+    background: black;
 }
+#lengua input {
+    border-radius: 500px;
+    border: 1px solid #0000008c;
+    /* width: 142px; */
+    box-shadow: 0 0 5px 1px #00000024;
+    padding: 0.1% 1%;
+    margin: 2px;
+  }
+  
+  button#historiaPersonalBoton {
+    width: 100px;
+    background: #f875e5;
+    width: 67px;
+    padding: 0.2% 2%;
+    box-shadow: 0 0 6px 0.5px #00000026;
+    border: 1px solid #0000007a;
+    border-radius: 73px;
+    font-size: 12px;
+    text-align: center;
+  }
+
 /* -------------- MEMORIA -------------- */
 #memoria{
     grid-area: memoria;
@@ -244,9 +295,18 @@ p#textoClick {
     box-shadow: 0PX 0PX 9PX 7px red;
     pointer-events: none;
 }
-#botonAnimacion{
+#botonAnimacion {
     width: 200px;
     height: 30px;
+    width: max-content;
+    background: #f87575;
+    /* width: 67px; */
+    padding: 0.2% 2%;
+    box-shadow: 0 0 6px 0.5px #00000026;
+    border: 1px solid #0000007a;
+    border-radius: 73px;
+    font-size: 12px;
+    text-align: center;
 }
 .bloquearClickContenedorMemoria{
     pointer-events: none;
@@ -450,13 +510,30 @@ button.botonesColores{
 label{
     pointer-events: none;
 }
+.preguntasHistoria input {
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #FFF;
+    height: 12px;
+    width: 12px;
+    border: 1px solid #00000070;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+
+
 .historiaCorrecto{
-    box-shadow: 0px 0px 8px 5px rgb(0, 255, 0);
+    box-shadow: 0px 0px 4px 3px #00ff00;
     pointer-events: none;
+    background-color: #00df00 !important;
 }
 .historiaIncorrecto{
-    box-shadow: 0px 0px 8px 5px  RGB(255, 0, 0);
+    box-shadow: 0px 0px 3px 1px  #ff0000;
     pointer-events: none;
+    background-color: red !important;
 }
 .sinClick{
     pointer-events: none;    
