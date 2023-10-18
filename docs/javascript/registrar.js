@@ -1,7 +1,7 @@
-Swal.fire("Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript");
 if (localStorage.getItem("usuarioLocal")) {
     window.location.href = "../index.html";
 } else {
+    Swal.fire("Hola soy Julián Scampino. Este es mi trabajo del curso de Javascript de Coder House. Está hecho con html, scss, Javascript");
     let nuevoUsuario = {};
     let formUsuario = document.getElementById("formUsuario");
     formUsuario.addEventListener("submit", (event) => {
@@ -21,12 +21,13 @@ if (localStorage.getItem("usuarioLocal")) {
 // Si se hace click en un avatar se selecciona el radio y se opaca el otro avatar
 let contenedorAvatares = Array.from(document.getElementsByClassName("img-avatar-registrar"))
 contenedorAvatares.forEach((element1, index1)=>{
-    element1.addEventListener("click" , (element1)=>{
-        element1.target.parentElement.parentElement.parentElement.children[1].checked = true
+    element1.addEventListener("click" , (elementClick)=>{
+        elementClick.target.parentElement.parentElement.parentElement.children[1].checked = true
         contenedorAvatares.forEach((element2, index2)=>{
             element2.style.opacity = "50%"
         })
-        element1.target.style.opacity = "100%"
+        elementClick.target.style.opacity = "100%"
+        agitarShake(contenedorAvatares[index1])
     })
 })
 // Si se hace click en un radio se opaca el otro avatar
@@ -38,5 +39,25 @@ radios.forEach((element1, index1)=>{
             element3.style.opacity = "50%"
         })
         contenedorAvatares[index1].style.opacity = "100%"
+        agitarShake(contenedorAvatares[index1])
     })
 })
+
+// Funcion de: animacion de shaker, sacado de AI
+const agitarShake = (elementoShake) =>{
+    let keyframes = [
+        { transform: "rotate(-5deg) translate(-5px, 0)" }, // left
+        { transform: "rotate(5deg) translate(5px, 0)" }, // right
+        { transform: "rotate(-5deg) translate(-5px, 0)" }, // left
+        { transform: "rotate(5deg) translate(5px, 0)" }, // right
+        { transform: "none" } // center
+    ];
+// Define the animation options
+let options = {
+    duration: 300, // milliseconds
+    iterations: 1 // repeat forever
+};
+// Create and play the animation
+elementoShake.animate(keyframes, options);
+
+}

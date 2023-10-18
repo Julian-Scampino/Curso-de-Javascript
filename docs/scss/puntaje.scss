@@ -23,7 +23,10 @@
     align-items: center;
 
 }
-
+#participantes {
+    display: flex;
+    justify-content: center;
+}
 table,caption,tr,th,td{
     border: 1px solid black;
     text-align: center;
@@ -66,5 +69,16 @@ tbody tr:not(.Nuevo){
     header div ul{
         display: flex;
         flex-direction: row;
+    }
+    table tbody{
+        line-break: anywhere;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 425px){
+    table{
+        width: 100%;
+    }
+    table tbody{
+        line-break: anywhere;
     }
 }

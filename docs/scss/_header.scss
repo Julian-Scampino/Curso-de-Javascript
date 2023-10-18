@@ -53,6 +53,10 @@ img#header-avatar {
 }
 p.nav-user-text {
     width: min-content;
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 header div button {
     border: 1px solid black;
