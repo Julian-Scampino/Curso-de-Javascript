@@ -42,6 +42,20 @@
     grid-template-columns: auto;
     font-size: 1.1rem;
 }
+.registrar-avatares-fondo{
+    position: absolute;
+    width: 12%;
+    height: auto;
+    opacity: 0.5;
+    z-index: -1;
+}
+#registrar-avatar-fondo-nene{
+    left: 0;
+}
+#registrar-avatar-fondo-nena{
+    right: 0;
+}
+
 .materia{
     margin: 3% 12%;
     border-radius: 10%;
@@ -68,11 +82,13 @@
     flex-wrap: wrap;
     align-content: center;
     gap: 5%;
+    position: relative;
+    margin: 20px 0px;
 }
 #index-categorias a{
     text-decoration: none;
     color: #ffffff;
-    text-shadow: 0 0 9px #00000052;
+    text-shadow: 0 0 4px #00000052;
 }
 #index-categorias a:hover{
     text-decoration: underline;
@@ -214,6 +230,8 @@ hr{
     border-radius: 73px;
     font-size: 12px;
     text-align: center;
+    animation: shake-lr 1.3s linear infinite both;
+    height: 1.5em;
   }
 
 /* -------------- MEMORIA -------------- */
@@ -232,8 +250,8 @@ div#memoria1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    height: 300px;
-    margin: 6%;
+    /* height: 300px;
+    margin: 6%; */
 }
 p#textoClick {
     margin: 0px 0px 20px 0px;
@@ -308,6 +326,28 @@ p#textoClick {
     border-radius: 73px;
     font-size: 12px;
     text-align: center;
+    animation: shake-lr 1.3s ease-out infinite both;
+}
+@keyframes shake-lr {
+    0%, 100% {
+        transform: rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    10% {
+        transform: rotate(2deg);
+    }
+    20%, 40%, 60% {
+        transform: rotate(-2deg);
+    }
+    30%, 50%, 70% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    90% {
+        transform: rotate(0deg);
+    }
 }
 .bloquearClickContenedorMemoria{
     pointer-events: none;
@@ -477,6 +517,20 @@ button.botonesColores{
     background-color: pink;
     pointer-events: none;
 }
+.boton-color-animacion{
+    animation: pulsate-bck 0.5s linear infinite both;
+}
+@keyframes pulsate-bck {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.97);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 .coloresBien{
     box-shadow: 0 0 8PX 6px #15fe3cb0;
     filter: brightness(1);
@@ -561,7 +615,9 @@ label{
     justify-content: center;
     align-content: center;
     margin: 20px 0px;
-    animation: sombra 2s infinite ease-out;
+    /* animation: sombra 2s infinite ease-out;
+    animation: 1.5s linear 0s infinite normal none running jello-horizontal; */
+    animation: sombra 2s infinite ease-out, 1.5s linear 0s infinite normal none running jello-horizontal;
 }
 #contenedorBotonFinal a h3{
     text-shadow: 0px 0px 3px black;
@@ -573,6 +629,32 @@ label{
     }
     50%{
         box-shadow: 0px 0px 20px 10px #48bcff;
+    }
+}
+@keyframes jello-horizontal{
+    0%, 100% {
+        -webkit-transform: scale3d(1,1,1);
+        transform: scale3d(1,1,1);
+    }
+    30% {
+        -webkit-transform: scale3d(1.10,.90,1);
+        transform: scale3d(1.10,.90,1);
+    }
+    40% {
+        -webkit-transform: scale3d(.90,1.10,1);
+        transform: scale3d(.90,1.10,1);
+    }
+    50% {
+        -webkit-transform: scale3d(1.15,.85,1);
+        transform: scale3d(1.15,.85,1);
+    }
+    65% {
+        -webkit-transform: scale3d(.95,1.05,1);
+        transform: scale3d(.95,1.05,1);
+    }
+    75% {
+        -webkit-transform: scale3d(1.05,.95,1);
+        transform: scale3d(1.05,.95,1);
     }
 }
 

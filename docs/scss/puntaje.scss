@@ -54,10 +54,10 @@ table th{
 tbody tr:not(.Nuevo){
     opacity: 50%;
 }
-.Nuevo>td:nth-child(1)::before{
+/* .Nuevo>td:nth-child(1)::before{
 
     content: '✅';
-}
+} */
 
 @media screen and (min-width: 0px) and (max-width: 768px){
     .swal2-container.swal2-center>.swal2-popup {

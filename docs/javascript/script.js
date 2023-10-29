@@ -113,8 +113,10 @@ Array.from(botonesColores).forEach((element, index)=>{
         document.querySelector("#contenedorDeBanderas").style.pointerEvents = "auto";
         botonesColores.forEach((element2)=>{
             element2.style.opacity = "50%"
+            element2.classList.remove("boton-color-animacion")  
         })
         element.style.opacity = "100%"
+        element.classList.toggle("boton-color-animacion")  
         
     })
 })

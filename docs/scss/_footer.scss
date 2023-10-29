@@ -6,4 +6,20 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+}
+footer p{
+    font-size: 26px;
+}
+footer a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    gap: 12px;
+}
+footer svg{
+    color: #0a66c2;
+    background-color: white;
 }
