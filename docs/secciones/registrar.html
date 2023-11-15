@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,8 +14,7 @@
 <body id="bodyRegistrar" class="formBody">
 	<header>
 		<a href="../index.html" class="header-title">
-			Educativa
-		</a>
+			<span>E</span> <span >d</span> <span >u</span> <span >c</span> <span >a</span> <span >t</span> <span >i</span> <span >v</span> <span >a</span></a>
 	</header>
 	<!-- ----------- Formulario de usuario ----------- -->
 	<main id="contenedorForm">
@@ -31,7 +30,7 @@
 					
 					<div class="contenedor-radio-label-vertical">
 						<label for="avatar-nene"><div class="contenedor-avatar-registrar">
-						<img class="img-avatar-registrar" src="../imagenes/avatar-nene-cambiado-chico200px.png" alt="avatar-nene">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-nene-cambiado-chico100px.png" alt="avatar-nene">
 					</div></label>
 						<input class="form-radio" type="radio" name="genero" value="nene" id="avatar-nene" required/>
 					</div>
@@ -40,17 +39,21 @@
 					
 					<div class="contenedor-radio-label-vertical">
 						<label for="avatar-nena"><div class="contenedor-avatar-registrar">
-						<img class="img-avatar-registrar" src="../imagenes/avatar-nena-cambiado-chico200px.png" alt="avatar-nena">
+						<img class="img-avatar-registrar" src="../imagenes/avatar-nena-cambiado-chico100px.png" alt="avatar-nena">
 					</div></label>
 						<input class="form-radio" type="radio" name="genero" value="nena" id="avatar-nena" required/>
 					</div>
 				</div>
 			</div>
 			<button type="submit">ENVIAR</button>
+			<p id="registrar-form-aclaracion-datos">(Tus datos NO serán guardados)</p>
 		</form>
-		<p>(Tus datos NO serán guardados en bases de datos)</p>
-		<img class="registrar-avatares-fondo" id="registrar-avatar-fondo-nene" src="../imagenes/avatar-nene-sin-fondo.png" alt="avatar-fondo-nene">
-		<img class="registrar-avatares-fondo" id="registrar-avatar-fondo-nena"src="../imagenes/avatar-nena-sin-fondo.png" alt="avatar-fondo-nena">
+		<!-- <img loading="lazy" class="registrar-avatares-fondo" id="registrar-avatar-fondo-nene" src="../imagenes/avatar-nene-completo-sin-fondo.png" alt="avatar-fondo-nene"> -->
+		<img loading="lazy" class="registrar-avatares-fondo" id="registrar-avatar-fondo-nene" src="../imagenes/avatar-nene-completo-sin-fondo.png" alt="avatar-fondo-nene" 
+		srcset="../imagenes/avatar-nene-completo-sin-fondo200w.png 200w , ../imagenes/avatar-nene-completo-sin-fondo400w.png 400w , ../imagenes/avatar-nene-completo-sin-fondo600w.png 600w " sizes="(min-width: 0px) and (max-width: 768px) 200px, (min-width: 769px) and (max-width: 1024px) 400px, (min-width: 1025px) 600px" >
+		<!-- <img loading="lazy" class="registrar-avatares-fondo" id="registrar-avatar-fondo-nena"src="../imagenes/avatar-nena-completo-sin-fondo.png" alt="avatar-fondo-nena"> -->
+		<img loading="lazy" class="registrar-avatares-fondo" id="registrar-avatar-fondo-nena" src="../imagenes/avatar-nena-completo-sin-fondo.png" alt="avatar-fondo-nena" 
+		srcset="../imagenes/avatar-nena-completo-sin-fondo200w.png 200w, ../imagenes/avatar-nena-completo-sin-fondo400w.png 400w, ../imagenes/avatar-nena-completo-sin-fondo600w.png 600w" sizes="(min-width: 0px) and (max-width: 768px) 200px, (min-width: 769px) and (max-width: 1024px) 400px, (min-width: 1025px) 600px" >
 	</main>
 	<!-- ----------- FOOTER ----------- -->
 	<footer>
@@ -60,6 +63,7 @@
 		  </svg> www.linkedin.com/in/julian-scampino</a>
 	</footer>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.15/dist/sweetalert2.all.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.0/dist/confetti.browser.min.js"></script>
 	<script src="../javascript/registrar.js"></script>
 </body>
 

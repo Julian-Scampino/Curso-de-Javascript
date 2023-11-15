@@ -63,6 +63,11 @@
     padding: 3% 0%;
     box-shadow: 0px 0px 14px 3px #0000009e;
 }
+.materia h2{
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-position: under;
+}
 .materia:nth-child(even){
     /* background: linear-gradient(263deg, #8a6df5 0%, #536bf5 50%, #6ec6ff 100%); */
     //background: linear-gradient(59deg, #8a6df5 0%, #536bf5 50%, #6ec6ff 100%);
@@ -71,7 +76,8 @@
 }
 .materia:nth-child(odd){
     //background: linear-gradient(237deg, #7c74ff 0%, #9377f3 50%, #5f76f7 100%);
-    background: linear-gradient(89deg, #8f3efa8c 0%, #cb90fc 50%, #8f3efa8c 100%);
+    //background: linear-gradient(89deg, #8f3efa8c 0%, #cb90fc 50%, #8f3efa8c 100%);
+    background: linear-gradient(89deg, #8f6ffc 0%, #bb89ff 50%, #8f6ffc 100%);
 }
 #index-categorias{
     width: 100%;
@@ -88,7 +94,7 @@
 #index-categorias a{
     text-decoration: none;
     color: #ffffff;
-    text-shadow: 0 0 4px #00000052;
+    text-shadow: 1px 1px 1px #0000008c;
 }
 #index-categorias a:hover{
     text-decoration: underline;
@@ -297,12 +303,12 @@ p#textoClick {
     opacity: 100%;
 }
 .mostrarMemoria{
-    animation-name: prueba;
+    animation-name: animacionImagenMemoria;
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
 
-@keyframes prueba{
+@keyframes animacionImagenMemoria{
     from {opacity: 0%;}
     to   {opacity: 100%;}
 }
@@ -619,7 +625,7 @@ label{
     animation: 1.5s linear 0s infinite normal none running jello-horizontal; */
     animation: sombra 2s infinite ease-out, 1.5s linear 0s infinite normal none running jello-horizontal;
 }
-#contenedorBotonFinal a h3{
+#contenedorBotonFinal a p{
     text-shadow: 0px 0px 3px black;
     font-size: 37px;
 }
@@ -658,7 +664,11 @@ label{
     }
 }
 
-
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .materia {
+        margin: 3% 5%;
+    }
+}
 @media screen and (min-width: 0px) and (max-width: 768px){
     .swal2-container.swal2-center>.swal2-popup {
         font-size: 13px;;

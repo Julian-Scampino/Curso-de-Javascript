@@ -1,6 +1,6 @@
 let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"));
-document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`;
-document.querySelector("#header-avatar").src =`../imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico200px.png`
+document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre}`;
+document.querySelector("#header-avatar").src =`../imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico100px.png`
 document.querySelector(".header-btn-logout").addEventListener("click", () => {
 	localStorage.clear();
 	window.location.href = "./registrar.html";
@@ -37,7 +37,7 @@ ArrayPersonas.forEach((persona) => {
 let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="
 color: white;
 background: #00d600;
-border: 2px solid black;;position: absolute;
+border: 2px solid black;
 ">
 <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
 </svg>`
@@ -53,3 +53,30 @@ ArrayPersonas.forEach((persona) => {
              </tr>
         `;
 });
+
+if(JSON.parse(localStorage.getItem("usuarioLocal"))?.correctas > 0){
+	var end = Date.now() + 2.5 * 1000;
+	var colors = ["#26ccff", "#a25afd", "#ff5e7e", "#88ff5a", "#fcff42", "#ffa62d", "#ff36ff"];
+	(function frame() {
+		confetti({
+			particleCount: 4,
+			angle: 60,
+			spread: 55,
+			origin: {x: 0},
+			colors: colors,
+			zIndex: -1
+		});
+		confetti({
+			particleCount: 4,
+			angle: 120,
+			spread: 55,
+			origin: {x: 1},
+			colors: colors,
+			zIndex: -1
+		});
+
+		if (Date.now() < end) {
+			requestAnimationFrame(frame);
+		}
+	})();
+}

@@ -22,7 +22,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    // Relative para las imagenes de fondo que son avsolutas
+    // Relative para las imagenes de fondo que son absolutas
     position: relative;
 }
 #formUsuario {
@@ -31,9 +31,10 @@
     height: 300px;
     justify-content: space-evenly;
     align-items: center;
-    background: #b6beff85;
+    background: #97a6ff;
     padding: 2% 5%;
     border-radius: 48px;
+    z-index: 1000;
 }
 input[type="text"] {
     border: none;
@@ -82,6 +83,9 @@ input[type="text"] {
     padding: 3% 5%;
     margin: 15px;
     border: none;
+}
+#registrar-form-aclaracion-datos{
+    font-size: 12px;
 }
 .registrar-avatares-fondo{
     position: absolute;

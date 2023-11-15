@@ -44,6 +44,10 @@ main{
     box-shadow: 0 0 2px 0.5px #00000036;
     margin: 5px;
 }
+.card-productos-boton:active {
+    transform: scale(1.1);
+    background: #00daff;
+}
 
 .card-productos-img{
     width: 150px;

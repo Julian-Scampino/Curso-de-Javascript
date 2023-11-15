@@ -1,8 +1,8 @@
 let nuevoUsuario = JSON.parse(localStorage.getItem("usuarioLocal"))
 nuevoUsuario.correctas = 0
 nuevoUsuario.fin = false
-document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre} ${nuevoUsuario.apellido}`
-document.querySelector("#header-avatar").src =`./imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico200px.png`
+document.querySelector(".nav-user-text").innerText = `${nuevoUsuario.nombre}`
+document.querySelector("#header-avatar").src =`./imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico100px.png`
 document.querySelector(".header-btn-logout").addEventListener("click", ()=>{
     localStorage.clear()
     window.location.href = "./secciones/registrar.html"

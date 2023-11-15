@@ -61,3 +61,49 @@ let options = {
 elementoShake.animate(keyframes, options);
 
 }
+llamadoAConfetti()
+setInterval(() => {
+  //La funcion se llama 2 veces para evitar delay, una llamado sin intervalo de unica vez y otra con serInterval (importante que el codigo se ejecute despues de leer el codigo de la libreria para evitar errores, la libreria ya tiene un delay propio que es complicado cambiar)
+  llamadoAConfetti()
+  }, 1000);
+
+
+
+  function llamadoAConfetti(){
+//https://github.com/catdad/canvas-confetti
+    //https://www.kirilv.com/canvas-confetti/
+    var count = 200;
+    var defaults = {
+      origin: { y: 0 }, gravity: 1.5, spread: 0, decay: 10}
+    
+    function fire(particleRatio, opts) {
+      confetti({
+        ...defaults,
+        ...opts,
+        particleCount: Math.floor(count * particleRatio)
+      });
+    }
+    
+    fire(0.25, {
+      spread: 26,
+      startVelocity: 55,
+    });
+    fire(0.2, {
+      spread: 60,
+    });
+    fire(0.35, {
+      spread: 100,
+      decay: 0.91,
+      scalar: 0.8
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 25,
+      decay: 0.92,
+      scalar: 1.2
+    });
+    fire(0.1, {
+      spread: 120,
+      startVelocity: 45,
+    });
+  }
