@@ -55,24 +55,26 @@ ArrayPersonas.forEach((persona) => {
 });
 
 if(JSON.parse(localStorage.getItem("usuarioLocal"))?.correctas > 0){
-	var end = Date.now() + 2.5 * 1000;
-	var colors = ["#26ccff", "#a25afd", "#ff5e7e", "#88ff5a", "#fcff42", "#ffa62d", "#ff36ff"];
+	var end = Date.now() + 1 * 1000;
+	var colors = ["#fcff42", "#ff5e5e", "#88ff5a", "#ffa62d", "#ff36ff", "#a25afd"];
 	(function frame() {
 		confetti({
-			particleCount: 4,
+			particleCount: 3,
 			angle: 60,
 			spread: 55,
 			origin: {x: 0},
 			colors: colors,
-			zIndex: -1
+			zIndex: -1,
+			scalar: 0.7
 		});
 		confetti({
-			particleCount: 4,
+			particleCount: 3,
 			angle: 120,
 			spread: 55,
 			origin: {x: 1},
 			colors: colors,
-			zIndex: -1
+			zIndex: -1,
+			scalar: 0.7
 		});
 
 		if (Date.now() < end) {

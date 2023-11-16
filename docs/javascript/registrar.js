@@ -72,7 +72,7 @@ setInterval(() => {
   function llamadoAConfetti(){
 //https://github.com/catdad/canvas-confetti
     //https://www.kirilv.com/canvas-confetti/
-    var count = 200;
+    var count = 80;
     var defaults = {
       origin: { y: 0 }, gravity: 1.5, spread: 0, decay: 10}
     
