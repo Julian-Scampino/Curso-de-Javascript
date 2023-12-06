@@ -26,23 +26,25 @@ main{
     margin: 50px 0px 0px 0px;
 }
 .card-productos {
-    border: 1px solid black;
+    border: 1px solid #000000b8;
     text-align: center;
     border-radius: 10px;
-    background: #a5cdff;
-    box-shadow: 0 0 10px 1px #00000036;
+    background: #ffffff;
+    box-shadow: 0 0 6px 3px #00000052;
 }
 .card-productos-titulo {
     text-transform: uppercase;
 }
 .card-productos-boton {
-    background-color: #5fb4ff;
+    background-color: #8ecaff;
     width: min-content;
-    padding: 2%;
+    padding: 0.3em 0.7em;
     text-transform: uppercase;
     border: 1px solid #0000002b;
     box-shadow: 0 0 2px 0.5px #00000036;
-    margin: 5px;
+    margin: 0.7em;
+    border-radius: 3em;
+    letter-spacing: 0.05em;
 }
 .card-productos-boton:active {
     transform: scale(1.1);
@@ -52,13 +54,11 @@ main{
 .card-productos-img{
     width: 150px;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid #00000042;
 }
 .card-productos-stock {
     color: #000000a3;
-}
-.card-productos-boton{
-    border-radius: 500px;
 }
 
 .card-productos-precio {
@@ -100,15 +100,15 @@ caption{
     margin: 18px;
 }
 #contenedorBotonesCompra button{
-    height: 40px;
-    padding: 3px;
-    margin-right: 17px;
-    color: #000000;
-    background: $azul;
-    border-radius: 500px;
-    border: 1px solid black;
-    text-shadow: 0px 0px 1px black;
-    letter-spacing: 1px;
+        /* height: 40px; */
+        padding: 0.4em 0.6em;
+        margin-right: 17px;
+        color: #000000;
+        background: #8ecaff;
+        border-radius: 3em;
+        border: 1px solid #000000ab;
+        /* text-shadow: 0px 0px 1px black; */
+        letter-spacing: 0.1em;
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px){

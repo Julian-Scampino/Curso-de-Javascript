@@ -71,30 +71,35 @@
 .materia:nth-child(even){
     /* background: linear-gradient(263deg, #8a6df5 0%, #536bf5 50%, #6ec6ff 100%); */
     //background: linear-gradient(59deg, #8a6df5 0%, #536bf5 50%, #6ec6ff 100%);
-    background: linear-gradient(89deg, #657bfa 0%, #7bbaff 50%, #657bfa 100%);
+    //background: linear-gradient(89deg, #657bfa 0%, #7bbaff 50%, #657bfa 100%);
+    background: linear-gradient(89deg, #8092fc 0%, #7bbaff 50%, #8092fc 100%);
     
 }
 .materia:nth-child(odd){
     //background: linear-gradient(237deg, #7c74ff 0%, #9377f3 50%, #5f76f7 100%);
     //background: linear-gradient(89deg, #8f3efa8c 0%, #cb90fc 50%, #8f3efa8c 100%);
-    background: linear-gradient(89deg, #8f6ffc 0%, #bb89ff 50%, #8f6ffc 100%);
+    //background: linear-gradient(89deg, #8f6ffc 0%, #bb89ff 50%, #8f6ffc 100%);
+    background: linear-gradient(89deg, #8f6ffc -15%, #f289ff 50%, #8f6ffc 115%);
 }
 #index-categorias{
     width: 100%;
-    margin: 15px 0;
+    margin: 15px 0 5px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
-    gap: 5%;
+    font-size: 0.9rem;
+    gap: 0.3em 3%;
     position: relative;
-    margin: 20px 0px;
 }
 #index-categorias a{
     text-decoration: none;
     color: #ffffff;
-    text-shadow: 1px 1px 1px #0000008c;
+    background: #364586;;
+    border-radius: 2em;
+    padding: 0.3em 0.7em;
+    border: 1px solid #00000085;
 }
 #index-categorias a:hover{
     text-decoration: underline;
@@ -228,7 +233,7 @@ hr{
   
   button#historiaPersonalBoton {
     width: 100px;
-    background: #f875e5;
+    background: #75e9f8;
     width: 67px;
     padding: 0.2% 2%;
     box-shadow: 0 0 6px 0.5px #00000026;
