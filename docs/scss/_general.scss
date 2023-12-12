@@ -4,14 +4,14 @@
     margin: 0;
 }
 html{
-    font-family: sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 body{
     text-align: center;
     background: linear-gradient(45deg, #9185d9 0%, #6c77ff 50%, #55a3f8 100%);
 } 
 button{
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.508);
     box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.502);
     text-transform: uppercase;
     font-weight: bold;
@@ -19,7 +19,8 @@ button{
     background: $botonColor;
     width: min-content;
     padding: 0 3%;
-    margin: 15px
+    margin: 15px;
+    font-family: inherit;
 }
 input {
     text-align: center;

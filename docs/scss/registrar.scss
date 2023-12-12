@@ -102,16 +102,14 @@ input[type="text"] {
     height: 18px;
 }
 #formUsuario button {
-    border: 1px solid black;
     box-shadow: 0 0 11px 0.5px #00000038;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 500px;
+    border-radius: 3em;
     background: #00f8ff;
     width: min-content;
     padding: 3% 5%;
-    margin: 15px;
-    border: none;
+    margin: 1em;
 }
 #registrar-form-aclaracion-datos{
     font-size: 12px;
