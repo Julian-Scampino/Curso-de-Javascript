@@ -5,6 +5,7 @@
 }
 html{
     font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
 }
 body{
     text-align: center;
@@ -15,12 +16,15 @@ button{
     box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.502);
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 3em;
     background: $botonColor;
-    width: min-content;
-    padding: 0 3%;
-    margin: 15px;
+    /* width: min-content; */
+    padding: 0.2em 1em;
+    margin: 1em;
     font-family: inherit;
+    font-size: 0.8rem;
+    text-align: center;
+    vertical-align: middle;
 }
 input {
     text-align: center;

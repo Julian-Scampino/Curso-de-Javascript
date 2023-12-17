@@ -12,7 +12,6 @@
         "footer";
     grid-template-rows: auto auto 100px;
     grid-template-columns: auto;
-    font-size: 1.1rem;
     //background: linear-gradient(45deg, #865bd9 0%, #4742cd 50%, #4174e4 90%);
     background-attachment: fixed;
     background-position: center;
@@ -40,7 +39,6 @@
     "contenedorBotonFinal";
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-columns: auto;
-    font-size: 1.1rem;
 }
 .registrar-avatares-fondo{
     position: absolute;
@@ -172,20 +170,15 @@ div#ejercicioMate input {
     box-shadow: 0 0 5px 1px #00000024;
 }
 #matematica button {
-    width: 100px;
     background: #f87575;
-    width: 67px;
-    padding: 0.2% 2%;
     box-shadow: 0 0 6px 0.5px #00000026;
     border: 1px solid #0000007a;
-    border-radius: 73px;
-    font-size: 12px;
     text-align: center;
 }
 #contenedorCaluladora p {
     color: white;
-    margin: 0px 0px 0px 23px;
-    letter-spacing: 4px;
+    /* margin: 0px 0px 0px 23px;
+    letter-spacing: 4px; */
 }
 /* -------------- LENGUA -------------- */
 #lengua{
@@ -210,7 +203,7 @@ div#ejercicioMate input {
 }
 #historiaPersonalTexto {
     text-align: center;
-    padding: 16px 100px;
+    margin: 10px;
 }
 .lengua-historiaPersonal{
     text-decoration: underline;
@@ -223,7 +216,7 @@ hr{
     background: black;
 }
 #lengua input {
-    border-radius: 500px;
+    border-radius: 3em;
     border: 1px solid #0000008c;
     /* width: 142px; */
     box-shadow: 0 0 5px 1px #00000024;
@@ -232,17 +225,11 @@ hr{
   }
   
   button#historiaPersonalBoton {
-    width: 100px;
     background: #75e9f8;
-    width: 67px;
-    padding: 0.2% 2%;
     box-shadow: 0 0 6px 0.5px #00000026;
     border: 1px solid #0000007a;
-    border-radius: 73px;
-    font-size: 12px;
     text-align: center;
     animation: shake-lr 1.3s linear infinite both;
-    height: 1.5em;
   }
 
 /* -------------- MEMORIA -------------- */
@@ -327,16 +314,10 @@ p#textoClick {
     pointer-events: none;
 }
 #botonAnimacion {
-    width: 200px;
-    height: 30px;
-    width: max-content;
     background: #f87575;
     /* width: 67px; */
-    padding: 0.2% 2%;
     box-shadow: 0 0 6px 0.5px #00000026;
     border: 1px solid #0000007a;
-    border-radius: 73px;
-    font-size: 12px;
     text-align: center;
     animation: shake-lr 1.3s ease-out infinite both;
 }
@@ -684,9 +665,6 @@ label{
     }
 }
 @media screen and (min-width: 0px) and (max-width: 768px){
-    .swal2-container.swal2-center>.swal2-popup {
-        font-size: 13px;;
-    }
     header{
         flex-direction: column;
     }

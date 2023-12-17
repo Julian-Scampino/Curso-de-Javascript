@@ -13,7 +13,6 @@
     "footer";
     grid-template-rows: auto 100px;
     grid-template-columns: auto;
-    font-size: 1.1rem;
     //background: linear-gradient(354deg, RGBa(103, 61, 254, 1) 0%, RGBa(83, 107, 245, 1) 50%, RGBa(95, 228, 247, 1) 100%);
     background: linear-gradient(45deg, #9383ff 0%, #7a84ff 50%, #62adff 100%);
 }
@@ -26,7 +25,7 @@
     position: relative;
 }
 #registrar-title{
-    font-size: 70px;
+    font-size: 4rem;
     font-weight: bold;
     letter-spacing: -0.13em;
 }
@@ -57,7 +56,6 @@
 #formUsuario {
     display: flex;
     flex-direction: column;
-    height: 300px;
     justify-content: space-evenly;
     align-items: center;
     background: #97a6ff;
@@ -105,14 +103,11 @@ input[type="text"] {
     box-shadow: 0 0 11px 0.5px #00000038;
     text-transform: uppercase;
     font-weight: bold;
-    border-radius: 3em;
     background: #00f8ff;
     width: min-content;
-    padding: 3% 5%;
-    margin: 1em;
 }
 #registrar-form-aclaracion-datos{
-    font-size: 12px;
+    font-size: 0.7em;
 }
 .registrar-avatares-fondo{
     position: absolute;

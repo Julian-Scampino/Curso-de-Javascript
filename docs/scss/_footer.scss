@@ -6,8 +6,6 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 17px;
-    
 }
 footer a{
     display: flex;
@@ -15,9 +13,10 @@ footer a{
     justify-content: center;
     text-decoration: none;
     color: #ffef00;
-    gap: 12px;
+    gap: 6px;
 }
 footer svg{
     color: #0a66c2;
     background-color: white;
+    border-radius: 0.1em;
 }
