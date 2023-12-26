@@ -6,6 +6,10 @@ footer{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: 23px;
+}
+footer p{
+    font-size: 1em;
 }
 footer a{
     display: flex;
@@ -13,10 +17,27 @@ footer a{
     justify-content: center;
     text-decoration: none;
     color: #ffef00;
-    gap: 6px;
+    gap: 3px;
+    font-size: 1em;
 }
 footer svg{
     color: #0a66c2;
-    background-color: white;
-    border-radius: 0.1em;
+    height: 1em;
+    width: 1em;
 }
+footer svg rect{
+    color: #ffffff;
+}
+
+@media screen and (min-width: 0px) and (max-width: 490px) {
+    footer {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 490px) and (max-width: 768px) {
+    footer {
+        font-size: 21px;
+    }
+}
+
