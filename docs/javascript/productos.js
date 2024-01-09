@@ -41,6 +41,7 @@ const mostrarOFerta = () =>{
         <p class="card-productos-stock">Stock: ${element.stock}</p>
         <p class="card-productos-precio">$${element.precio}</p>
         <button class="card-productos-boton" id="botonProducto${element.id}">Comprar</button>
+        <div class="ribbon-content"><span class="ribbon">Oferta -30%</span></div>
         </div>
         `
     })

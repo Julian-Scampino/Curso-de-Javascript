@@ -34,7 +34,7 @@ calculadora.addEventListener('submit', (event) =>{
     if(resultadoCalculadora == "" || isNaN(resultadoCalculadora)){
         textoResultadoCalculadora.innerText = `error`
     } else{
-        textoResultadoCalculadora.innerText = `  = ${resultadoCalculadora}`
+        textoResultadoCalculadora.innerText = `${calculadoraValor1} ${operador} ${calculadoraValor2} \n = ${resultadoCalculadora}`
     }
     calculadora.reset()
 })
@@ -187,7 +187,17 @@ botonFinal.addEventListener('click', (e) =>{
     nuevoUsuario.fin = true
     localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario))
 })
-
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelector('#contenedorBotonFinal a').classList.add('animacion-boton-final')
+          return
+      }
+        document.querySelector('#contenedorBotonFinal a').classList.remove('animacion-boton-final')
+    });
+  });
+  
+  observer.observe(document.querySelector('#contenedorBotonFinal a'));
 
 // --- Funcion correcto --- //
 function correcto (etiqueta){

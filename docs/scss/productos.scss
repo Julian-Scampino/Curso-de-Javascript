@@ -30,6 +30,7 @@ main{
     border-radius: 10px;
     background: #ffffff;
     box-shadow: 0 0 6px 3px #00000052;
+    position: relative;
 }
 .card-productos-titulo {
     text-transform: uppercase;
@@ -39,6 +40,7 @@ main{
     text-transform: uppercase;
     border: 1px solid #0000002b;
     box-shadow: 0 0 2px 0.5px #00000036;
+    padding: 0.1em 0.6em;
 }
 .card-productos-boton:active {
     transform: scale(1.1);
@@ -58,6 +60,32 @@ main{
 .card-productos-precio {
     font-size: 1.3rem;
 }
+.ribbon-content {
+    height: 91px;
+    overflow: hidden;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+    width: 89px;
+}
+.ribbon {
+    background: linear-gradient(90deg,#fa4242 0,#ffc300);
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    left: -23px;
+    letter-spacing: .05em;
+    line-height: 16px;
+    padding: 7px 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 2px 2px #56a1f3;
+    top: 22px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 160px;
+}
 div#resumenCompra {
     display: flex;
     justify-content: center;
@@ -69,7 +97,7 @@ div#resumenCompra {
 table,caption,tr,th,td{
     border: 1px solid black;
     text-align: center;
-    padding: 10px;
+    padding: 0.4em;
 }
 table {
     caption-side: top;
@@ -97,7 +125,6 @@ caption{
         color: #000000;
         background: #8ecaff;
         border: 1px solid #000000ab;
-        /* text-shadow: 0px 0px 1px black; */
 }
 
 @media screen and (min-width: 0px) and (max-width: 768px){

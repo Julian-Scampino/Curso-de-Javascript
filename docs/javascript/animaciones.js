@@ -14,7 +14,8 @@ let imagenesClick = Array.from(document.getElementsByClassName("imagenesClick"))
 imagenesClick.forEach((element) =>{
     element.addEventListener('click', () =>{
         if(textoClick.textContent == element.id){
-            element.classList.add("imagenBien", "mostrarImagenesOnClick")  
+            element.classList.add("imagenBien", "mostrarImagenesOnClick")
+            element.parentElement.style.border = '5px solid #00ff09'
             let siBien = arrayMemoria.indexOf(element.id)
             arrayMemoria.splice(siBien, 1)
             probandoArray = arrayMemoria[0]
@@ -24,6 +25,7 @@ imagenesClick.forEach((element) =>{
             element.previousElementSibling.style.display="none"
         }else{
             element.classList.add("imagenMal", "mostrarImagenesOnClick")
+            element.parentElement.style.border = '5px solid red'
             let siMal = arrayMemoria.indexOf(element.id)
             arrayMemoria.splice(siMal, 1)
             probandoArray = arrayMemoria[0]
@@ -31,8 +33,8 @@ imagenesClick.forEach((element) =>{
             element.previousElementSibling.style.display="none"
         }
         if(arrayMemoria?.length == 1){
-            botonAnimacion.remove()
-            document.querySelector("#memoria1 > h5").remove()
+            botonAnimacion.style.visibility= "hidden";
+            document.querySelector('#texto-explicativo-juego-memoria').style.visibility= "hidden";
         }
     })
 })

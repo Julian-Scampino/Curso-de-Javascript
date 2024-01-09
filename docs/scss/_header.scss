@@ -15,16 +15,15 @@ header{
 header > .header-title{
     font-size: 40px;
     font-weight: bold;
-    letter-spacing: -4px;
+    letter-spacing: -0.1em;
     flex: 1;
 }
 header>.header-title:hover {
-    text-shadow: 0PX 0PX 12PX #ffffff8f;
     background: #ffffff47;
 }
 header > .header-title span{
     display: inline-block;
-    text-shadow: 1px 1px 1px #000000a1;
+    text-shadow: 0.02em 0.02em 0.01em #000000;
 }
 .header-title span:nth-child(1) { color: #ff3d3d; transform: rotate(-5deg); }
 
@@ -62,7 +61,6 @@ header a{
 }
 header nav a:hover{
     text-decoration: underline;
-    text-shadow: 0PX 0PX 12PX #ffffff8f;
     background: #ffffff47;
 }
 #header-contenedorEspacio-usuario{
@@ -91,7 +89,7 @@ img#header-avatar {
     width: 40px;
     height: 40px;
     box-shadow: 0 0 10px 0px #000000ba;
-    margin: 0 5px;
+    margin: 0 8px;
 }
 p.nav-user-text {
     width: min-content;
@@ -99,6 +97,8 @@ p.nav-user-text {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-transform: capitalize;
+    font-size: 16px;
 }
 #header-infoLogout{
     position: absolute;
@@ -107,7 +107,7 @@ p.nav-user-text {
     background: #4f74bc;
     box-shadow: 0 3px 7px 0px #00000087;
     z-index: 1;
-    font-size: 1rem;
+    font-size: 16px;
     border-radius: 0 0 1em 1em;
     overflow: hidden;
 }
