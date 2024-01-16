@@ -1,0 +1,72 @@
+@import "general";
+@import "header";
+@import "footer";
+@import "variables";
+
+body {
+    width: auto;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "mainIndex"
+        "footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto;
+    //background: linear-gradient(45deg, #865bd9 0%, #4742cd 50%, #4174e4 90%);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+main section p span {
+    font-size: 90px !important;
+    color: #ffef00;
+    text-shadow: .05em .05em 0 #000;
+}
+main section p {
+    margin: 2.5vw;
+    margin: 2.5vmin;
+    font-size: 40px !important;
+    color: #000000;
+    text-wrap: pretty;
+}
+#boton-anchor-404{
+    border: 1px solid rgba(0, 0, 0, 0.508);
+    box-shadow: 0 0 2px 0.5px rgba(0, 0, 0, 0.502);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3em;
+    background: #00f8ff;
+    /* width: min-content; */
+    padding: 0.2em 1em;
+    margin: 1em;
+    font-family: inherit;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    color: black;
+    font-size: 20px !important;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    header {
+        flex-direction:column;
+    }
+    header div ul {
+        display: flex;
+        flex-direction: row
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 490px) {
+    main section p {
+        font-size:30px !important
+    }
+
+    #boton-anchor-404 {
+        font-size: 15px !important
+    }
+    footer {
+        font-size: 17px;
+    }
+}

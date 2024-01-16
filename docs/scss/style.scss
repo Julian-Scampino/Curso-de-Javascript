@@ -10,7 +10,7 @@
         "header"
         "mainIndex"
         "footer";
-    grid-template-rows: auto auto 100px;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: auto;
     //background: linear-gradient(45deg, #865bd9 0%, #4742cd 50%, #4174e4 90%);
     background-attachment: fixed;
@@ -27,7 +27,6 @@
 #mainIndex{
     grid-area: mainIndex;
     width: auto;
-    min-height: 150vh;
     display: grid;
     grid-template-areas: 
     "categorias"

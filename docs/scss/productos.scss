@@ -4,13 +4,12 @@
 @import "variables";
 #bodyProductos{
     width: auto;
-    min-height: 100vh;
     display: grid;
     grid-template-areas: 
     "header"
     "mainProductos"
     "footer";
-    grid-template-rows: auto 1fr 100px;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: auto;
     /* background: linear-gradient(354deg, RGBa(103,61,254,1) 0%, RGBa(83,107,245,1) 50%, RGBa(95,228,247,1) 100%); */
 }

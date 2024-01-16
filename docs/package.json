@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "node-sass --include-path scss scss/style.scss estilos/style.css --output-style compressed && node-sass --include-path scss scss/registrar.scss estilos/registrar.css --output-style compressed && node-sass --include-path scss scss/puntaje.scss estilos/puntaje.css --output-style compressed && node-sass --include-path scss scss/productos.scss estilos/productos.css --output-style compressed" ,
+    "build-css": "node-sass --include-path scss scss/style.scss estilos/style.css --output-style compressed && node-sass --include-path scss scss/registrar.scss estilos/registrar.css --output-style compressed && node-sass --include-path scss scss/puntaje.scss estilos/puntaje.css --output-style compressed && node-sass --include-path scss scss/productos.scss estilos/productos.css --output-style compressed && node-sass --include-path scss scss/404.scss estilos/404.css --output-style compressed" ,
     "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "author": "",
