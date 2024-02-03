@@ -7,11 +7,9 @@ if (localStorage.getItem("usuarioLocal")) {
     formUsuario.addEventListener("submit", (event) => {
         event.preventDefault();
         let formData = new FormData(formUsuario);
-        let data = {}
         for (let [key, value] of formData) {
             nuevoUsuario[key] = value;
           }
-          nuevoUsuario.correctas = 0;
         localStorage.setItem("usuarioLocal", JSON.stringify(nuevoUsuario));
         if (inputNombreUsuario != "" && inputApellidoUsuario != "") {
             window.location.href = "../index.html";
@@ -19,7 +17,7 @@ if (localStorage.getItem("usuarioLocal")) {
     });
 }
 // Si se hace click en un avatar se selecciona el radio y se opaca el otro avatar
-let contenedorAvatares = Array.from(document.getElementsByClassName("img-avatar-registrar"))
+let contenedorAvatares = document.querySelectorAll(".img-avatar-registrar")
 contenedorAvatares.forEach((element1, index1)=>{
     element1.addEventListener("click" , (elementClick)=>{
         elementClick.target.parentElement.parentElement.parentElement.children[1].checked = true
@@ -31,7 +29,7 @@ contenedorAvatares.forEach((element1, index1)=>{
     })
 })
 // Si se hace click en un radio se opaca el otro avatar
-let radios = Array.from(document.getElementsByClassName("form-radio"))
+let radios = document.querySelectorAll(".form-radio")
 radios.forEach((element1, index1)=>{
     element1.addEventListener("click" , (element2)=>{
         contenedorAvatares.forEach((element3, index3)=>{

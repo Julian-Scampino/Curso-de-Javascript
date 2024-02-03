@@ -1,89 +1,102 @@
-//----------------------------- Memoria
-let Auto = document.getElementById('auto')
-let Elefante = document.getElementById('elefante')
-let Nube = document.getElementById('nube')
-let Arbol = document.getElementById('arbol')
-let Trofeo = document.getElementById('trofeo')
-let Pelota = document.getElementById('pelota')
+//-----------------------------  Memoria
+const contenedorDeImagenes = document.getElementById("contenedorDeImagenes");
+const listaDomMemoria = Array.from(document.querySelectorAll(".flipper-frontYBack"));
+const cardsMemoria = document.querySelectorAll(".flip-container");
+const textoExplicativoMemoria = document.querySelector("#texto-explicativo-juego-memoria");
+const textoClick = document.getElementById("textoClick");
+const botonAnimacion = document.getElementById("botonAnimacion");
+const contenedorMioLoader = document.getElementById("contenedorMioLoader");
+const loaderHijomovil = document.getElementById("loader-hijo-movil");
+const arrayRespuestasMemoria = ["auto", "elefante", "nube", "arbol", "trofeo", "pelota"];
 
+//--------------------  Mecanica de pregunta correctas o incorrectas
+cardsMemoria.forEach((element) => {
+	element.addEventListener("click", (event) => {
+		event.stopPropagation();
+		if (arrayRespuestasMemoria.length > 0) {
+			console.log('arrayRespuestasMemoria.length > 0', element.id);
+			let indiceRespuesta = arrayRespuestasMemoria.indexOf(element.id);
+			if (textoClick.textContent == element.id && arrayRespuestasMemoria.includes(element.id)) {
+				console.log('si correcto');
+				element.firstElementChild.classList.add("imagenBien", "mostrarImagenesOnClick");
+				arrayRespuestasMemoria.splice(indiceRespuesta, 1);
+				textoClick.innerText = arrayRespuestasMemoria[0];
+				correcto(element);
+			}
+			if (textoClick.textContent != element.id && arrayRespuestasMemoria.includes(element.id)) {
+				console.log('si incorrecto');
+				element.firstElementChild.classList.add("imagenMal", "mostrarImagenesOnClick");
+				arrayRespuestasMemoria.splice(indiceRespuesta, 1);
+				incorrecto(element);
+			}
+		}
+		if (arrayRespuestasMemoria.length == 0) {
+			console.log('si 0 en array');
+			contenedorDeImagenes.classList.add("bloquearClickContenedorMemoria")
+			textoExplicativoMemoria.style.visibility = "hidden";
+			textoClick.innerText = "TERMINADO";
+			botonAnimacion.style.animation = "none";
+			botonAnimacion.style.visibility = "hidden";
+		}
+	});
+});
 
-let textoClick = document.getElementById('textoClick')
-let arrayMemoria= ["auto", "elefante", "nube", "arbol", "trofeo", "pelota", "TERMINADO"]
-let probandoArray
-let imagenesClick = Array.from(document.getElementsByClassName("imagenesClick"))
-imagenesClick.forEach((element) =>{
-    element.addEventListener('click', () =>{
-        if(textoClick.textContent == element.id){
-            element.classList.add("imagenBien", "mostrarImagenesOnClick")
-            element.parentElement.style.border = '5px solid #00ff09'
-            let siBien = arrayMemoria.indexOf(element.id)
-            arrayMemoria.splice(siBien, 1)
-            probandoArray = arrayMemoria[0]
-            textoClick.innerText = probandoArray
-            toast ()
-            //Ocultando el elemento de hermano mayor P que contiene el signo de pregunta ?
-            element.previousElementSibling.style.display="none"
-        }else{
-            element.classList.add("imagenMal", "mostrarImagenesOnClick")
-            element.parentElement.style.border = '5px solid red'
-            let siMal = arrayMemoria.indexOf(element.id)
-            arrayMemoria.splice(siMal, 1)
-            probandoArray = arrayMemoria[0]
-            //Ocultando el elemento de hermano mayor P que contiene el signo de pregunta ?
-            element.previousElementSibling.style.display="none"
-        }
-        if(arrayMemoria?.length == 1){
-            botonAnimacion.style.visibility= "hidden";
-            document.querySelector('#texto-explicativo-juego-memoria').style.visibility= "hidden";
-        }
-    })
-})
-
-
-//--------------------animaciones
-let botonAnimacion = document.getElementById('botonAnimacion')
-let contenedorDeImagenes = document.getElementById("contenedorDeImagenes")
-botonAnimacion.addEventListener('click', () =>{
-    botonAnimacion.style.display = "none"
-    let contenedorMioLoader = document.getElementById("contenedorMioLoader");
-    contenedorMioLoader.className ="contenedorMioLoaderAparecer"
-    textoClick.innerText = ""
-    if(contenedorDeImagenes.className != "bloquearClickContenedorMemoria"){
-        contenedorDeImagenes.classList.add("bloquearClickContenedorMemoria")
-    }
-    setTimeout(() => {
-        Auto.classList.toggle("mostrarMemoria")    
-    }, 1000);
-    setTimeout(() => {
-        Auto.classList.toggle("mostrarMemoria")
-        Nube.classList.toggle("mostrarMemoria")    
-    }, 2000);
-    setTimeout(() => {
-        Nube.classList.toggle("mostrarMemoria")  
-        Trofeo.classList.toggle("mostrarMemoria")  
-    }, 3000);
-    setTimeout(() => {
-        Trofeo.classList.toggle("mostrarMemoria")
-        Pelota.classList.toggle("mostrarMemoria")    
-    }, 4000);
-    setTimeout(() => {
-        Pelota.classList.toggle("mostrarMemoria")
-        Elefante.classList.toggle("mostrarMemoria")    
-    }, 5000);
-    setTimeout(() => {
-        Elefante.classList.toggle("mostrarMemoria")
-        Arbol.classList.toggle("mostrarMemoria")    
-    }, 6000)
-    setTimeout(() => {
-        Arbol.classList.remove("mostrarMemoria")
-        if(contenedorDeImagenes.className == "bloquearClickContenedorMemoria"){
-            contenedorDeImagenes.classList.remove("bloquearClickContenedorMemoria")
-        }
-        textoClick.innerText = arrayMemoria[0]
-        botonAnimacion.style.display = ""
-        contenedorMioLoader.className ="contenedorMioLoaderEscondido"
-        
-    }, 7000)
-})
-    
-    
+//--------------------  Animaciones al hacer 'click' para empezar
+botonAnimacion.addEventListener("click", (event) => {
+	// Cancelar el bubbling
+	event.stopPropagation();
+	// Esto hace que la ventana este en el centro del contenedor con las animaciones del juego
+	contenedorDeImagenes.scrollIntoView({block: "center"});
+	// Esto desabilita el scroll
+	function disableScroll() {
+		let scrollTop = window.pageYOffset || window.scrollY;
+		let scrollLeft = window.pageXOffset || window.scrollX;
+		window.onscroll = function () {
+			window.scrollTo(scrollLeft, scrollTop);
+		};
+	}
+	function enableScroll() {
+		window.onscroll = function () {};
+	}
+	disableScroll();
+	//Aca se definen los elementos EXTERNOS relacionados al juego
+	botonAnimacion.style.display = "none";
+	contenedorMioLoader.className = "contenedorMioLoaderAparecer";
+	textoClick.innerText = "";
+	if (contenedorDeImagenes.className != "bloquearClickContenedorMemoria") {
+		contenedorDeImagenes.classList.add("bloquearClickContenedorMemoria");
+	}
+	// Codigo para la duracion de 1 animacion de item del juego
+	const velocidad = 1000 / 0.6;
+	// Codigo para activar la animacion de girar con una determinada velocidad controlada desde javascript y quitar la clase de la animacion cada vez que se reproduzca de nuevo
+	listaDomMemoria.forEach((element) => {
+		//element.style.animationDuration = `auto`
+		element.style.animationDuration = `${velocidad / 1000}s`;
+		element.classList.remove("mostrarMemoria");
+	});
+	// Ordena RANDOM el orden de las animaciones, pero NO el de las respuestas correctas NO
+	listaDomMemoria.sort(() => Math.random() - 0.5);
+	let contadorIntervalo = 0;
+	const intervaloIDMemoriaAnimacion = setInterval(() => {
+		listaDomMemoria[contadorIntervalo]?.classList.toggle("mostrarMemoria");
+		contadorIntervalo++;
+		if (contadorIntervalo == listaDomMemoria.length) {
+			// Esto es para esperar a que termine la animacion del ultimo item
+			textoClick.classList.remove("textoBlink");
+			setTimeout(() => {
+				if (contenedorDeImagenes.className == "bloquearClickContenedorMemoria") {
+					contenedorDeImagenes.classList.remove("bloquearClickContenedorMemoria");
+				}
+				textoClick.innerText = arrayRespuestasMemoria[0];
+				botonAnimacion.style.display = "";
+				botonAnimacion.innerText = "REPETIR ANIMACION";
+				contenedorMioLoader.className = "contenedorMioLoaderEscondido";
+				// Llamada a funcion que habilita el scroll, esta mas arriba
+				enableScroll();
+				clearInterval(intervaloIDMemoriaAnimacion);
+				textoClick.classList.add("textoBlink");
+			}, velocidad);
+		}
+	}, velocidad);
+	loaderHijomovil.style.animationDuration = `${((velocidad / 1000) * listaDomMemoria.length) + velocidad / 1000}s`;
+});

@@ -86,7 +86,46 @@ tbody tr:not(.Nuevo){
 
     content: '✅';
 } */
-
+#contenedor-tabla-jugardorIndividual{
+    background: #37386d;
+    padding: 1.6%;
+    padding: 2vmin 3vmin;
+    border-radius: 20px;
+    box-shadow: 0 0 5px 5px #a9f2ff33;
+    display: flex;
+    flex-direction: column;
+}
+#contedor-imagen-nombreApellido-tabla-individual {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+img#tabla-individual-avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 10px 0px #000000ba;
+    margin: 0 8px;
+}
+p#nombre-jugardor {
+    color: #ffef00;
+    width: min-content;
+    max-width: 20ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-transform: capitalize;
+    font-size: 1em;
+}
+#contenedor-tabla-jugardorIndividual table{
+    margin: 10px 0px;
+    background: #8fe0ff;
+}
+#contenedor-tabla-jugardorIndividual table tr{
+    //Esta propiedad es por el otro table, hay que corregir
+    opacity: 100%;
+}
 @media screen and (min-width: 0px) and (max-width: 768px){
     header{
         flex-direction: column;

@@ -22,18 +22,6 @@ ArrayPersonas.sort((a, b) => {
 	}
 	return 0;
 });
-/* let tablaBodyParticipantes = document.getElementById("tablaBodyParticipantes");
-tablaBodyParticipantes.innerHTML = "";
-ArrayPersonas.forEach((persona) => {
-	let {nombre, apellido, correctas} = persona;
-	tablaBodyParticipantes.innerHTML += `
-            <tr ${persona?.class == "Nuevo" ? 'class="Nuevo"' : 'class=""'}>
-                <td>${nombre}</td>
-                <td>${apellido}</td>
-                <td>${correctas}</td>
-             </tr>
-        `;
-}); */
 let svg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16" style="
 color: white;
 background: #00d600;
@@ -53,7 +41,16 @@ ArrayPersonas.forEach((persona) => {
              </tr>
         `;
 });
+document.querySelector('#tabla-individual-avatar').src =`../imagenes/avatar-${nuevoUsuario.genero}-cambiado-chico100px.png`
+document.querySelector('#nombre-jugardor').innerHTML = `${nuevoUsuario.nombre} <br>${nuevoUsuario.apellido}`;
+document.querySelector('#resultados-jugadorIndividual').innerHTML = 
+`<tr>
+	<td>${nuevoUsuario?.correctas ?? 0}</td>
+	<td>${nuevoUsuario?.incorrectas ?? 0}</td>
+	<td>${nuevoUsuario?.faltantes ?? 'todas'}</td>
+</tr>`
 
+// Codigo de animacion de libreria Confetti
 if(JSON.parse(localStorage.getItem("usuarioLocal"))?.correctas > 0){
 	var end = Date.now() + 1 * 1000;
 	var colors = ["#fcff42", "#ff5e5e", "#88ff5a", "#ffa62d", "#ff36ff", "#a25afd"];

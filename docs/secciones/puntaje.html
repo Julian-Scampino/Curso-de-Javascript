@@ -58,28 +58,47 @@
 			</div>
 		</header>
 		<main id="mainPuntaje">
-			<!-- <p id="puntaje-textoExplicativo">Si quieres ver tu puntaje: completa los desafíos y luego hace "click" a <span>FIN</span></p> -->
-			<p id="puntaje-textoExplicativo">Si quieres ver tu puntaje:</p>
-			<ol id="puntaje-textoExplicativo-listaDesordenada">
-				<li>Ve al INICIO</li>
-				<li>Completa todos los desafíos que puedas</li>
-				<li>Por último haz "click" a <span>FIN</span></li>
-			</ol>
-			<div id="participantes">
+			<div id="contendor-textoExplicativo-puntajeGeneral">
+				<p id="puntaje-textoExplicativo">Si quieres ver tu puntaje:</p>
+				<ol id="puntaje-textoExplicativo-listaDesordenada">
+					<li>Ve al INICIO</li>
+					<li>Completa todos los desafíos que puedas</li>
+					<li>Por último haz "click" a <span>FIN</span></li>
+				</ol>
+				<div id="participantes">
+					<table>
+						<thead>
+							<tr>
+								<th>Nombre</th>
+								<th>Apellido</th>
+								<th>Correctas</th>
+							</tr>
+						</thead>
+						<tbody id="tablaBodyParticipantes"></tbody>
+					</table>
+				</div>
+			</div>
+			<div id="contenedor-tabla-jugardorIndividual">
+				<div id="contedor-imagen-nombreApellido-tabla-individual">
+					<div id="contedor-imagen-tablaIndividual">
+						<img id="tabla-individual-avatar" width="40" height="40" src="" alt="avatar">
+					</div>
+					<p id="nombre-jugardor"></p>
+				</div>
 				<table>
 					<thead>
 						<tr>
-							<th>Nombre</th>
-							<th>Apellido</th>
 							<th>Correctas</th>
+							<th>Incorrectas</th>
+							<th>Faltantes</th>
 						</tr>
 					</thead>
-					<tbody id="tablaBodyParticipantes"></tbody>
+					<tbody id="resultados-jugadorIndividual"></tbody>
 				</table>
 			</div>
 		</main>
 		<footer>
-			<p>Alumno: Julián Scampino</p>
+			<p>Creador: Julián Scampino</p>
 			<a href="https://www.linkedin.com/in/julian-scampino/" id="linkedin">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
 					<rect xmlns="http://www.w3.org/2000/svg" width="13" height="13" x="2" y="2"></rect>

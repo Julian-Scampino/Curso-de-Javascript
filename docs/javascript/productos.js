@@ -49,7 +49,7 @@ const mostrarOFerta = () =>{
 
 mostrarOFerta()
 // Agregando productos al carrito, controlando el stock y subiendolos al localstorage
-let productosDom = Array.from(document.getElementsByClassName("card-productos-boton"))
+let productosDom = document.querySelectorAll(".card-productos-boton")
 productosDom.forEach((element) => {
     element.addEventListener('click', (e) =>{
         e.preventDefault()
@@ -95,7 +95,7 @@ function mostrarResumen(){
     tablaTotal.innerHTML =  `<tr><td colspan="5">Total: $${total}</td></tr>`
 }
 // Botones para limpiar el carrito
-let botonesCompra = Array.from(document.getElementsByClassName("botonesCompra"))
+let botonesCompra = document.querySelectorAll(".botonesCompra")
 botonesCompra.forEach((element) =>{
     element.addEventListener('click', () =>{
         localStorage.removeItem('carrito')

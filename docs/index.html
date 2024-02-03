@@ -1,393 +1,492 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="./estilos/style.css" />
-		<meta name="description" content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
-		<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online" />
-		<link rel="icon" href="./favicon.png">
-		<title>Inicio-Educativa</title>
-		<script>
-			if (!localStorage.getItem("usuarioLocal")) {
-				window.location.href = "./secciones/registrar.html";
-			}
-		</script>
-	</head>
-	<body id="bodyIndex">
-		<header>
-			<!-- <a href="./index.html" class="header-title">Educativa</a> -->
-			<a href="./index.html" class="header-title">
-				<span>E</span> <span >d</span> <span >u</span> <span >c</span> <span >a</span> <span >t</span> <span >i</span> <span >v</span> <span >a</span></a>
-			<nav>
-				<ul>
-					<li>
-						<a href="./index.html">Inicio</a>
-					</li>
-					<li>
-						<a href="./secciones/puntaje.html">Puntaje</a>
-					</li>
-					<li>
-						<a href="./secciones/productos.html">Productos</a>
-					</li>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./estilos/style.css" />
+	<meta name="description"
+		content="Educativa es una plataforma de aprendizaje online que ofrece cursos y productos educativos de calidad." />
+	<meta name="keywords" content="educativa, cursos, productos, aprendizaje, online" />
+	<link rel="icon" href="./favicon.png">
+	<title>Inicio-Educativa</title>
+	<script>
+		if (!localStorage.getItem("usuarioLocal")) {
+			window.location.href = "./secciones/registrar.html";
+		}
+	</script>
+</head>
+
+<body id="bodyIndex">
+	<header>
+		<!-- <a href="./index.html" class="header-title">Educativa</a> -->
+		<a href="./index.html" class="header-title">
+			<span>E</span> <span>d</span> <span>u</span> <span>c</span> <span>a</span> <span>t</span> <span>i</span>
+			<span>v</span> <span>a</span></a>
+		<nav>
+			<ul>
+				<li>
+					<a href="./index.html">Inicio</a>
+				</li>
+				<li>
+					<a href="./secciones/puntaje.html">Puntaje</a>
+				</li>
+				<li>
+					<a href="./secciones/productos.html">Productos</a>
+				</li>
+			</ul>
+		</nav>
+		<div id="header-contenedorEspacio-usuario">
+			<div id="header-contenedorTotal-usuario">
+				<div id="header-contenedor-avatarNombre">
+					<img id="header-avatar" width="40" height="40" src="" alt="avatar">
+					<p class="nav-user-text"></p>
+					<svg id="header-flecha-submenu" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+						<path
+							d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+					</svg>
+				</div>
+				<!-- <button class="header-btn-logout">Salir</button> -->
+				<ul id="header-infoLogout">
+					<li id="header-puntos">Puntos: 0</li>
+					<li class="header-btn-logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+							fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+							<path fill-rule="evenodd"
+								d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+						</svg> Salir</li>
 				</ul>
-			</nav>
-			<div id="header-contenedorEspacio-usuario">
-				<div id="header-contenedorTotal-usuario">
-					<div id="header-contenedor-avatarNombre">
-						<img id="header-avatar" width="40" height="40" src="" alt="avatar">
-						<p class="nav-user-text"></p>
-						<svg id="header-flecha-submenu" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-							<path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-						</svg>
-					</div>
-					<!-- <button class="header-btn-logout">Salir</button> -->
-					<ul id="header-infoLogout">
-						<li id="header-puntos">Puntos: 0</li>
-						<li class="header-btn-logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-								fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-								<path fill-rule="evenodd"
-									d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-								<path fill-rule="evenodd"
-									d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-							</svg> Salir</li>
-					</ul>
+			</div>
+		</div>
+	</header>
+	<main id="mainIndex">
+		<nav id="index-categorias">
+			<a href="#matematica">Matemática</a>
+			<a href="#lengua">Lengua</a>
+			<a href="#memoria">Juego memoria</a>
+			<a href="#banderas">Colorear banderas</a>
+			<a href="#historia">Historia</a>
+		</nav>
+		<!-- ----------- Matematica ----------- -->
+		<article id="matematica" class="materia">
+			<h2>Matemática</h2>
+			<br />
+			<div class="hijosMate" id="practicaMate">
+				<h3>Calculadora</h3>
+				<div id="contenedorCaluladora">
+					<form name="calculadora" id="calculadora">
+						<div>
+							<input id="calculadoraValor1" type="number" name="num1" placeholder="Número 1"
+								required="" />
+							<input id="calculadoraValor2" type="number" name="num2" placeholder="Número 2"
+								required="" />
+						</div>
+						<div>
+							<div>
+								<!-- <input class="botonesCalculadora" type="submit" name="sumar" value="+" /> -->
+								<button class="botonesCalculadora" type="submit" name="sumar" value="+"><svg
+										xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+									</svg></button>
+								<!-- <input class="botonesCalculadora" type="submit" name="restar" value="-" /> -->
+								<button class="botonesCalculadora" type="submit" name="restar" value="-"><svg
+										xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z" />
+									</svg></button>
+							</div>
+							<div>
+								<!-- <input class="botonesCalculadora" type="submit" name="multiplicar" value="x" /> -->
+								<button class="botonesCalculadora" type="submit" name="multiplicar" value="x"><svg
+										xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+									</svg></button>
+								<!-- <input class="botonesCalculadora" type="submit" name="dividir" value="/" /> -->
+								<button class="botonesCalculadora" type="submit" name="dividir" value="/"><svg
+										xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+										class="bi bi-slash-circle-fill" viewBox="0 0 16 16">
+										<path
+											d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z" />
+									</svg></button>
+							</div>
+						</div>
+					</form>
+					<p id="textoResultadoCalculadora">=</p>
 				</div>
 			</div>
-		</header>
-		<main id="mainIndex">
-			<nav id="index-categorias">
-				<a href="#matematica">Matemática</a>
-				<a href="#lengua">Lengua</a>
-				<a href="#memoria">Juego memoria</a>
-				<a href="#banderas">Colorear banderas</a>
-				<a href="#historia">Historia</a>
-			</nav>
-			<!-- ----------- Matematica ----------- -->
-			<article id="matematica" class="materia">
-				<h2>Matemática</h2>
+			<div class="hijosMate" id="ejercicioMate">
+				<h3>Ejercicios</h3>
 				<br />
-				<div class="hijosMate" id="practicaMate">
-					<h3>Calculadora</h3>
-					<div id="contenedorCaluladora">
-						<form name="calculadora" id="calculadora">
-							<div>
-								<input id="calculadoraValor1" type="number" name="num1" placeholder="Número 1" required="" />
-								<input id="calculadoraValor2" type="number" name="num2" placeholder="Número 2" required="" />
-							</div>
-							<div>
-								<div>
-									<!-- <input class="botonesCalculadora" type="submit" name="sumar" value="+" /> -->
-									<button class="botonesCalculadora" type="submit" name="sumar" value="+" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-									  </svg></button>
-									<!-- <input class="botonesCalculadora" type="submit" name="restar" value="-" /> -->
-									<button class="botonesCalculadora" type="submit" name="restar" value="-" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
-										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
-									  </svg></button>
+				<form class="preguntasMate">
+					<label for="preguntaMate1">Si tengo 4 perros, 2 gatos y 3 caballos. ¿Cuántos animales tengo en
+						total?</label>
+					<br />
+					<input type="number" data-tipo='pregunta' name="preguntaMate1" id="preguntaMate1" required/>
+					<button type="submit">Listo</button>
+				</form>
+				<br />
+				<form class="preguntasMate">
+					<label for="preguntaMate2">A una flor se la caen los pétalos. Había 8 y se le cayeron 6 ¿Cuántos
+						pétalos tiene ahora?</label>
+					<br />
+					<input type="number" data-tipo='pregunta' name="preguntaMate2" id="preguntaMate2" required/>
+					<button type="submit">Listo</button>
+				</form>
+				<br />
+				<form class="preguntasMate">
+					<label for="preguntaMate3">Hay 9 manzanas y hay 3 personas. ¿Cuántas manzanas deberían tener cada
+						persona?</label>
+					<br />
+					<input type="number" data-tipo='pregunta' name="preguntaMate3" id="preguntaMate3" required/>
+					<button type="submit">Listo</button>
+				</form>
+				<br />
+				<form class="preguntasMate">
+					<label for="preguntaMate4">Si una tienda vende 5 caramelos por $10. ¿Cuantos caramelos puedo comprar
+						con $30? </label>
+					<br />
+					<input type="number" data-tipo='pregunta' name="preguntaMate4" id="preguntaMate4" required/>
+					<button type="submit">Listo</button>
+				</form>
+				<br />
+			</div>
+		</article>
+		<!-- ----------- Lengua ----------- -->
+		<article id="lengua" class="materia">
+			<h2>Lengua</h2>
+			<br />
+			<div class="hijosLengua" id="practicaLengua">
+				<h3>Practicando: sustantivos, adjetivos y verbos</h3>
+				<br />
+				<form id="historiaPersonal">
+					<div>
+						<label for="sustantivo">¿Cómo te llamas?</label>
+						<br />
+						<input type="text" name="sustantivo" id="sustantivo" required />
+						<br />
+					</div>
+					<div>
+						<label for="adjetivo">¿Cómo eres?</label>
+						<br />
+						<input type="text" name="adjetivo" id="adjetivo" required />
+						<br />
+					</div>
+					<div>
+						<label for="verbo">¿Qué te gusta hacer?</label>
+						<br />
+						<input type="text" name="verbo" id="verbo" required />
+					</div>
+					<button type="submit" id="historiaPersonalBoton">Listo</button>
+				</form>
+				<p id="historiaPersonalTexto">(Contesta las preguntas y este texto cambiará)</p>
+			</div>
+			<hr />
+			<div class="hijosLengua" id="ejercicioLengua">
+				<h3>Ejercicios</h3>
+				<br />
+				<p>Lee el siguiente texto, identifica los sustantivos, adjetivos y verbos, y escribe en los campos de
+					texto el orden en el que aparecen.</p>
+				<br />
+				<p>"<span class="resaltado-desafio-lengua">Había</span> una vez, <span class="resaltado-desafio-lengua">subiendo</span> las <span class="resaltado-desafio-lengua">escaleras</span>, un <span class="resaltado-desafio-lengua">veloz</span> <span class="resaltado-desafio-lengua">niño</span>..."</p>
+				<br />
+				<input name="preguntaLengua1" data-tipo='pregunta' type="text" class="preguntasLengua"
+					placeholder="¿sustantivo, adjetivo, verbo?" />
+				<input name="preguntaLengua2" data-tipo='pregunta' type="text" class="preguntasLengua"
+					placeholder="¿sustantivo, adjetivo, verbo?" />
+				<input name="preguntaLengua3" data-tipo='pregunta' type="text" class="preguntasLengua"
+					placeholder="¿sustantivo, adjetivo, verbo?" />
+				<input name="preguntaLengua4" data-tipo='pregunta' type="text" class="preguntasLengua"
+					placeholder="¿sustantivo, adjetivo, verbo?" />
+				<input name="preguntaLengua5" data-tipo='pregunta' type="text" class="preguntasLengua"
+					placeholder="¿sustantivo, adjetivo, verbo?" />
+			</div>
+		</article>
+		<!-- ----------- Memoria ----------- -->
+		<article id="memoria" class="materia">
+			<h2>Juego memoria</h2>
+			<p>
+				Este es un juego de memoria. <br />
+				Haga 'click' en el botón para ver los objetos, luego haga 'click' en el cuadrado que corresponda según
+				lo que pide el texto.
+			</p>
+			<div id="memoria1">
+				<div id="contenedorDeImagenes" class="bloquearClickContenedorMemoria">
+					<div id="memoriaBloque1para3">
+						<div class="flip-container" id="auto">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
 								</div>
-								<div>
-									<!-- <input class="botonesCalculadora" type="submit" name="multiplicar" value="x" /> -->
-									<button class="botonesCalculadora" type="submit" name="multiplicar" value="x" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
-										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-									  </svg></button>
-									<!-- <input class="botonesCalculadora" type="submit" name="dividir" value="/" /> -->
-									<button class="botonesCalculadora" type="submit" name="dividir" value="/" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-slash-circle-fill" viewBox="0 0 16 16">
-										<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.646-2.646a.5.5 0 0 0-.708-.708l-6 6a.5.5 0 0 0 .708.708l6-6z"/>
-									  </svg></button>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/auto2.png" class="imagenesClick" alt="auto" />
 								</div>
 							</div>
-						</form>
-						<p id="textoResultadoCalculadora">=</p>
+						</div>
+						<div class="flip-container" id="pelota">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
+								</div>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/pelota2.png" class="imagenesClick"
+										alt="pelota" />
+								</div>
+							</div>
+						</div>
+						<div class="flip-container" id="nube">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
+								</div>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/nube2.png" class="imagenesClick" alt="nube" />
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="memoriaBloque2para3">
+						<div class="flip-container" id="elefante">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
+								</div>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/elefante2.png" class="imagenesClick"
+										alt="elefante" />
+								</div>
+							</div>
+						</div>
+						<div class="flip-container" id="trofeo">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
+								</div>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/trofeo2.png" class="imagenesClick"
+										alt="trofeo" />
+								</div>
+							</div>
+						</div>
+						<div class="flip-container" id="arbol">
+							<div class="flipper-frontYBack" data-tipo='pregunta'>
+								<div class="front">
+									<p>?</p>
+								</div>
+								<div class="back">
+									<img loading="lazy" src="./imagenes/arbol2.png" class="imagenesClick" alt="arbol" />
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="hijosMate" id="ejercicioMate">
-					<h3>Ejercicios</h3>
-					<br />
-					<form class="preguntasMate">
-						<label for="preguntaMate1">Si tengo 4 perros, 2 gatos y 3 caballos. ¿Cuántos animales tengo en total?</label>
-						<br />
-						<input type="number" name="preguntaMate1" id="preguntaMate1" />
-						<button type="submit">Listo</button>
-					</form>
-					<br />
-					<form class="preguntasMate">
-						<label for="preguntaMate2">A una flor se la caen los pétalos. Había 8 y se le cayeron 6 ¿Cuántos pétalos tiene ahora?</label>
-						<br />
-						<input type="number" name="preguntaMate2" id="preguntaMate2" />
-						<button type="submit">Listo</button>
-					</form>
-					<br />
-					<form class="preguntasMate">
-						<label for="preguntaMate3">Hay 9 manzanas y hay 3 personas. ¿Cuántas manzanas deberían tener cada persona?</label>
-						<br />
-						<input type="number" name="preguntaMate3" id="preguntaMate3" />
-						<button type="submit">Listo</button>
-					</form>
-					<br />
-					<form class="preguntasMate">
-						<label for="preguntaMate4">Si una tienda vende 5 caramelos por $10. ¿Cuantos caramelos puedo comprar con $30? </label>
-						<br />
-						<input type="number" name="preguntaMate4" id="preguntaMate4" />
-						<button type="submit">Listo</button>
-					</form>
-					<br />
+				<p id="texto-explicativo-juego-memoria">Haga 'click' en el cuadrado donde está el o la:</p>
+				<p id="textoClick">...</p>
+				<button id="botonAnimacion">Mostrar animación</button>
+				<!-- animacion de cssloaders.github.io -->
+				<div id="contenedorMioLoader" class="contenedorMioLoaderEscondido">
+					<span class="loader">
+						<span id="loader-hijo-movil"></span>
+					</span>
 				</div>
-			</article>
-			<!-- ----------- Lengua ----------- -->
-			<article id="lengua" class="materia">
-				<h2>Lengua</h2>
+			</div>
+		</article>
+		<!-- ----------- Banderas ----------- -->
+		<article id="banderas" class="materia">
+			<div id="contenedorTextoBanderas">
+				<h2>Colorear banderas</h2>
 				<br />
-				<div class="hijosLengua" id="practicaLengua">
-					<h3>Practicando: sustantivos, adjetivos y verbos</h3>
-					<br />
-					<form id="historiaPersonal">
-						<div>
-							<label for="sustantivo">¿Cómo te llamas?</label>
-							<br />
-							<input type="text" id="sustantivo" required />
-							<br />
-						</div>
-						<div>
-							<label for="adjetivo">¿Cómo eres?</label>
-							<br />
-							<input type="text" id="adjetivo" required />
-							<br />
-						</div>
-						<div>
-							<label for="verbo">¿Qué te gusta hacer?</label>
-							<br />
-							<input type="text" id="verbo" required />
-						</div>
-						<button type="submit" id="historiaPersonalBoton">Listo</button>
-					</form>
-					<p id="historiaPersonalTexto">(Contesta las preguntas y este texto cambiará)</p>
-				</div>
-				<hr />
-				<div class="hijosLengua" id="ejercicioLengua">
-					<h3>Ejercicios</h3>
-					<br />
-					<p>Lee el siguiente texto, identifica los sustantivos, adjetivos y verbos, y escribe en los campos de texto el orden en el que aparecen.</p>
-					<br />
-					<p>"Había una vez, subiendo las escaleras, un veloz niño..."</p>
-					<br />
-					<input name="preguntaLengua1" type="text" class="preguntasLengua" placeholder="¿sustantivo, adjetivo, verbo?" />
-					<input name="preguntaLengua2" type="text" class="preguntasLengua" placeholder="¿sustantivo, adjetivo, verbo?" />
-					<input name="preguntaLengua3" type="text" class="preguntasLengua" placeholder="¿sustantivo, adjetivo, verbo?" />
-					<input name="preguntaLengua4" type="text" class="preguntasLengua" placeholder="¿sustantivo, adjetivo, verbo?" />
-					<input name="preguntaLengua5" type="text" class="preguntasLengua" placeholder="¿sustantivo, adjetivo, verbo?" />
-				</div>
-			</article>
-			<!-- ----------- Memoria ----------- -->
-			<article id="memoria" class="materia">
-				<h2>Juego memoria</h2>
+				<br />
 				<p>
-					Este es un juego de memoria. <br />
-					Haga 'click' en el botón para ver los objetos, luego haga 'click' en el cuadrado que corresponda según lo que pide el texto.
+					Para seleccionar un color has 'click' en un botón con los colores. <br />
+					Luego has click en los lugares para colorear.
+					<br /><br />Argentina / Chile / Italia
 				</p>
-				<div id="memoria1">
-					<div id="contenedorDeImagenes" class="bloquearClickContenedorMemoria">
-						<div id="memoriaBloque1para3">
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/auto2.png" class="imagenesClick" alt="auto" id="auto" />
-							</div>
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/pelota2.png" class="imagenesClick" alt="pelota" id="pelota" />
-							</div>
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/nube2.png" class="imagenesClick" alt="nube" id="nube" />
-							</div>
-						</div>
-						<div id="memoriaBloque2para3">
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/elefante2.png" class="imagenesClick" alt="elefante" id="elefante" />
-							</div>
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/trofeo2.png" class="imagenesClick" alt="trofeo" id="trofeo" />
-							</div>
-							<div class="claseCajaClick">
-								<p>?</p>
-								<img loading="lazy" src="./imagenes/arbol2.png" class="imagenesClick" alt="arbol" id="arbol" />
-							</div>
-						</div>
-					</div>
-					<p id="texto-explicativo-juego-memoria" >Haga 'click' en el cuadrado donde está el o la:</p>
-					<p id="textoClick">...</p>
-					<button id="botonAnimacion">Mostrar animación</button>
-					<!-- animacion de cssloaders.github.io -->
-					<div id="contenedorMioLoader" class="contenedorMioLoaderEscondido"><span class="loader"></span></div>
+			</div>
+			<div id="contenedorBotonesColores">
+				<div class="contenedo-tresBotones-colores-banderas">
+					<button class="botonesColores" id="botonBlanco" data-bandera-boton-color="blanco">Blanco</button>
+					<button class="botonesColores" id="botonCeleste" data-bandera-boton-color="celeste">Celeste</button>
+					<button class="botonesColores" id="botonRosa" data-bandera-boton-color="rosa">Rosa</button>
 				</div>
-			</article>
-			<!-- ----------- Banderas ----------- -->
-			<article id="banderas" class="materia">
-				<div id="contenedorTextoBanderas">
-					<h2>Colorear banderas</h2>
-					<br />
-					<br />
-					<p>
-						Para seleccionar un color has 'click' en un botón con los colores. <br />
-						Luego has click en los lugares para colorear.
-						<br /><br />Argentina / Chile / Italia
-					</p>
+				<div class="contenedo-tresBotones-colores-banderas">
+					<button class="botonesColores" id="botonRojo" data-bandera-boton-color="rojo">Rojo</button>
+					<button class="botonesColores" id="botonVerde" data-bandera-boton-color="verde">Verde</button>
+					<button class="botonesColores" id="botonAmarillo"
+						data-bandera-boton-color="amarillo">Amarillo</button>
 				</div>
-				<div id="contenedorBotonesColores">
-					<div class="contenedo-tresBotones-colores-banderas">
-						<button class="botonesColores" id="botonBlanco">Blanco</button>
-						<button class="botonesColores" id="botonCeleste">Celeste</button>
-						<button class="botonesColores" id="botonRosa">Rosa</button>
-					</div>
-					<div class="contenedo-tresBotones-colores-banderas">
-						<button class="botonesColores" id="botonRojo">Rojo</button>
-						<button class="botonesColores" id="botonVerde">Verde</button>
-						<button class="botonesColores" id="botonAmarillo">Amarillo</button>
-					</div>
-				</div>
-				<div id="contenedorDeBanderas">
-					<div id="contenedorArgentina" class="contenedoresDeCadaBandera">
-						<div class="cajasArgentina"></div>
-						<div class="cajasArgentina">
-							<div id="contenedor-sol">
-							<svg id="bandera-sol" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px" viewBox="-165 -165 330 330">
+			</div>
+			<div id="contenedorDeBanderas">
+				<div id="contenedorArgentina" class="contenedoresDeCadaBandera">
+					<div class="cajasBanderaColor cajasArgentina" data-tipo='pregunta' data-bandera-caja-color="celeste"></div>
+					<div class="cajasBanderaColor cajasArgentina" data-tipo='pregunta' data-bandera-caja-color="blanco">
+						
+						<div id="contenedor-sol">
+							<svg id="bandera-sol" xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink" width="504px" height="504px"
+								viewBox="-165 -165 330 330">
 								<title>Sun of May</title>
 								<title>Sun of May as represented on the flag of Argentina</title>
-							
+
 								<g id="sun" fill="#fcbf49" stroke="#843511" stroke-width="1.5">
 									<g id="rays-16">
 										<g id="rays-8">
 											<g id="rays-4">
 												<g id="rays-2">
-													<path d="M -8,0 L -2,159.5 c 0,0 0,3 2,3 s 2,-3 2,-3 L 8,0"/>
-													<path d="M -4,0 L 0,109.5 L 4,0" fill="#843511" stroke="none"/>
+													<path d="M -8,0 L -2,159.5 c 0,0 0,3 2,3 s 2,-3 2,-3 L 8,0" />
+													<path d="M -4,0 L 0,109.5 L 4,0" fill="#843511" stroke="none" />
 													<g transform="rotate(11.5)">
-														<path d="M -4.5,53.5 C -9.5,75 1.5,89.5 -4,108.5 S -1,140.5 0,148.5 -5,160 -3,161.5 5,158 5.5,147 -1.5,131.25 5,108 1,77 8,56"/>
-														<path d="M -1,58 C -4,79 6,90.5 0,109 C 8,95 -2,81 3,59" fill="#843511" stroke="none"/>
+														<path
+															d="M -4.5,53.5 C -9.5,75 1.5,89.5 -4,108.5 S -1,140.5 0,148.5 -5,160 -3,161.5 5,158 5.5,147 -1.5,131.25 5,108 1,77 8,56" />
+														<path d="M -1,58 C -4,79 6,90.5 0,109 C 8,95 -2,81 3,59"
+															fill="#843511" stroke="none" />
 													</g>
 												</g>
-												<use xlink:href="#rays-2" transform="rotate(180)"/>
+												<use xlink:href="#rays-2" transform="rotate(180)" />
 											</g>
-											<use xlink:href="#rays-4" transform="rotate(90)"/>
+											<use xlink:href="#rays-4" transform="rotate(90)" />
 										</g>
-										<use xlink:href="#rays-8" transform="rotate(45)"/>
+										<use xlink:href="#rays-8" transform="rotate(45)" />
 									</g>
-									<use xlink:href="#rays-16" transform="rotate(22.5)"/>
-									<circle r="65" stroke-width="1"/>
+									<use xlink:href="#rays-16" transform="rotate(22.5)" />
+									<circle r="65" stroke-width="1" />
 									<g id="face_right" fill="#843511" stroke="none">
-										<path id="eyebrow_nose" d="M 41,-14 C 29.5,-24 15,-25.5 7,-18 A 140,50 10 0,0 8.5,8.5 C 8,8.5 7,9 6.5,9.5 A 80,50 10 0,1 4,-19 C 15,-28 30,-29 41,-14"/>
-										<path id="uppalpebra" d="M 23,-17 C 16.5,-17 15,-15.5 12,-13 S 7.5,-11 7,-10.5 S 7,-8.5 8,-9 S 11,-10.5 14,-13 S 20,-15.5 23,-15.5 C 32,-15.5 37,-8 38,-8.5 S 33,-17 23,-17"/>
-										<path id="upeyecontour" d="M 34.5,-8.5 C 28,-15.5 16,-16 11,-8 H 13 C 18,-16 30,-12.5 31,-9 v 1"/>
-										<circle id="pupil" cx="22" cy="-9" r="4.5"/>
-										<path id="loweyecontour" d="M 11,-8 C 16,-3.5 27,-3 34.5,-8.5 L 31,-9 C 26,-3.5 18,-4 13,-8 v -1"/>
-										<path id="lowpalpebra" d="M 35,-6 C 26.5,0.5 18,0 13,-3 S 8,-7 9,-7 S 11,-6 15,-4 S 25,-2 35,-6"/>
-										<path id="nose" d="M 10.5,9 A 3,3 0 1,1 6.5,12 C 6,13 4,16 0,16 h -1 l 1,1.5 C 1,17.5 4,17.5 6,16 A 4.5,4.5 0 1,0 10.5,9"/>
-										<path id="uplip1" d="M 16.5,30 C 12,27 10,22.5 5,22.5 C 4,22.5 2,23 0,24 h -1 L 0,25.5 C 2,25.5 5,23 8.5,25 S 14,29 16.5,30"/>
-										<path id="midlip" d="M 15,30 C 5,27 3,29 0,29 h -1 l 1,2 C 4,31 6,28 15,30"/>
-										<path id="uplip2" d="M 16.5,30 C 5.5,29 9,35.5 0,35.5 h -1 L 0,37 C 11,37 6,31 16.5,30"/>
-										<path id="chin" d="M 9,46 a 9,9 0 0,0 -18,0 a 9.25,9.25 0 0,1 18,0"/>
+										<path id="eyebrow_nose"
+											d="M 41,-14 C 29.5,-24 15,-25.5 7,-18 A 140,50 10 0,0 8.5,8.5 C 8,8.5 7,9 6.5,9.5 A 80,50 10 0,1 4,-19 C 15,-28 30,-29 41,-14" />
+										<path id="uppalpebra"
+											d="M 23,-17 C 16.5,-17 15,-15.5 12,-13 S 7.5,-11 7,-10.5 S 7,-8.5 8,-9 S 11,-10.5 14,-13 S 20,-15.5 23,-15.5 C 32,-15.5 37,-8 38,-8.5 S 33,-17 23,-17" />
+										<path id="upeyecontour"
+											d="M 34.5,-8.5 C 28,-15.5 16,-16 11,-8 H 13 C 18,-16 30,-12.5 31,-9 v 1" />
+										<circle id="pupil" cx="22" cy="-9" r="4.5" />
+										<path id="loweyecontour"
+											d="M 11,-8 C 16,-3.5 27,-3 34.5,-8.5 L 31,-9 C 26,-3.5 18,-4 13,-8 v -1" />
+										<path id="lowpalpebra"
+											d="M 35,-6 C 26.5,0.5 18,0 13,-3 S 8,-7 9,-7 S 11,-6 15,-4 S 25,-2 35,-6" />
+										<path id="nose"
+											d="M 10.5,9 A 3,3 0 1,1 6.5,12 C 6,13 4,16 0,16 h -1 l 1,1.5 C 1,17.5 4,17.5 6,16 A 4.5,4.5 0 1,0 10.5,9" />
+										<path id="uplip1"
+											d="M 16.5,30 C 12,27 10,22.5 5,22.5 C 4,22.5 2,23 0,24 h -1 L 0,25.5 C 2,25.5 5,23 8.5,25 S 14,29 16.5,30" />
+										<path id="midlip" d="M 15,30 C 5,27 3,29 0,29 h -1 l 1,2 C 4,31 6,28 15,30" />
+										<path id="uplip2"
+											d="M 16.5,30 C 5.5,29 9,35.5 0,35.5 h -1 L 0,37 C 11,37 6,31 16.5,30" />
+										<path id="chin" d="M 9,46 a 9,9 0 0,0 -18,0 a 9.25,9.25 0 0,1 18,0" />
 									</g>
-									<use xlink:href="#face_right" transform="scale(-1,1)"/>
+									<use xlink:href="#face_right" transform="scale(-1,1)" />
 								</g>
-							</svg></div>
+							</svg>
 						</div>
-						<div class="cajasArgentina"></div>
 					</div>
-					<div id="contenedorChile" class="contenedoresDeCadaBandera">
-						<div class="cajasChile"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-							<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-						  </svg></div>
-						<div class="cajasChile"></div>
-						<div class="cajasChile"></div>
-					</div>
-					<div id="contenedorItalia" class="contenedoresDeCadaBandera">
-						<div class="cajasItalia"></div>
-						<div class="cajasItalia"></div>
-						<div class="cajasItalia"></div>
-					</div>
+					<div class="cajasBanderaColor cajasArgentina" data-tipo='pregunta' data-bandera-caja-color="celeste"></div>
 				</div>
-			</article>
-			<!-- ----------- Historia ----------- -->
-			<article id="historia" class="materia">
-				<h2>Historia</h2>
-				<div class="preguntasHistoria">
-					<p>¿Quién descubrió América?</p>
-					<div class="contenedorRadios">
-						<input type="radio" name="america" value="Colon" id="america1" />
-						<label for="america1">Colón</label>
-						<br />
-						<input type="radio" name="america" value="Magallanes" id="america2" />
-						<label for="america2">Magallanes</label>
-						<br />
-						<input type="radio" name="america" value="Drake" id="america3" />
-						<label for="america3">Drake</label>
+				<div id="contenedorChile" class="contenedoresDeCadaBandera">
+					<div class="cajasBanderaColor cajasChile" data-tipo='pregunta' data-bandera-caja-color="celeste">
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+							class="bi bi-star-fill" viewBox="0 0 16 16">
+							<path
+								d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+						</svg>
 					</div>
+					<div class="cajasBanderaColor cajasChile" data-tipo='pregunta' data-bandera-caja-color="blanco"></div>
+					<div class="cajasBanderaColor cajasChile" data-tipo='pregunta' data-bandera-caja-color="rojo"></div>
 				</div>
-				<div class="preguntasHistoria">
-					<p>¿En qué año se desarrolló la Revolución de Mayo en Argentina?</p>
-					<div class="contenedorRadios">
-						<input type="radio" name="revolucionDeMayo" value="1816" id="revolucionDeMayo1" />
-						<label for="revolucionDeMayo1">1816</label>
-						<br />
-						<input type="radio" name="revolucionDeMayo" value="1810" id="revolucionDeMayo2" />
-						<label for="revolucionDeMayo2">1810</label>
-						<br />
-						<input type="radio" name="revolucionDeMayo" value="1806" id="revolucionDeMayo3" />
-						<label for="revolucionDeMayo3">1806</label>
-					</div>
+				<div id="contenedorItalia" class="contenedoresDeCadaBandera">
+					<div class="cajasBanderaColor cajasItalia" data-tipo='pregunta' data-bandera-caja-color="verde"></div>
+					<div class="cajasBanderaColor cajasItalia" data-tipo='pregunta' data-bandera-caja-color="blanco"></div>
+					<div class="cajasBanderaColor cajasItalia" data-tipo='pregunta' data-bandera-caja-color="rojo"></div>
 				</div>
-				<div class="preguntasHistoria">
-					<p>El representante del Rey de España en el Rio de La Plata se llamaba...</p>
-					<div class="contenedorRadios">
-						<input type="radio" name="representante" value="Virrey" id="representante1" />
-						<label for="representante1">Virrey</label>
-						<br />
-						<input type="radio" name="representante" value="Representante" id="representante2" />
-						<label for="representante2">Representante</label>
-						<br />
-						<input type="radio" name="representante" value="Consejero" id="representante3" />
-						<label for="representante3">Consejero</label>
-					</div>
-				</div>
-				<div class="preguntasHistoria">
-					<p>¿Cuántas veces fue votado el ex presidente Juan Domingo Perón?</p>
-					<div class="contenedorRadios">
-						<input type="radio" name="peron" value="1" id="peron1" />
-						<label for="peron1">1</label>
-						<br />
-						<input type="radio" name="peron" value="2" id="peron2" />
-						<label for="peron2">2</label>
-						<br />
-						<input type="radio" name="peron" value="3" id="peron3" />
-						<label for="peron3">3</label>
-					</div>
-				</div>
-			</article>
-			<div id="contenedorBotonFinal">
-				<h2>Haga 'click' para finalizar</h2>
-				<a href="./secciones/puntaje.html" id="botonFinal"><p>FIN</p></a>
 			</div>
-		</main>
-		<footer>
-			<p>Alumno: Julián Scampino</p>
-			<a href="https://www.linkedin.com/in/julian-scampino/" id="linkedin">
-				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-linkedin" viewBox="0 0 16 16">
-					<rect xmlns="http://www.w3.org/2000/svg" width="13" height="13" x="2" y="2"></rect>
-					<path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-				</svg> www.linkedin.com/in/julian-scampino</a>
-		</footer>
-		<!-- ----------- FOOTER ----------- -->
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-		<!-- <script src="./javascript/minify/script.js"></script>
+		</article>
+		<!-- ----------- Historia ----------- -->
+		<article id="historia" class="materia">
+			<h2>Historia</h2>
+			<div class="preguntasHistoria">
+				<p>¿Quién descubrió América?</p>
+				<div class="contenedorRadios" data-tipo='pregunta'>
+					<input type="radio" name="america" value="Colon" id="america1" />
+					<label for="america1">Colón</label>
+					<br />
+					<input type="radio" name="america" value="Magallanes" id="america2" />
+					<label for="america2">Magallanes</label>
+					<br />
+					<input type="radio" name="america" value="Drake" id="america3" />
+					<label for="america3">Drake</label>
+				</div>
+			</div>
+			<div class="preguntasHistoria">
+				<p>¿En qué año se desarrolló la Revolución de Mayo en Argentina?</p>
+				<div class="contenedorRadios" data-tipo='pregunta'>
+					<input type="radio" name="revolucionDeMayo" value="1816" id="revolucionDeMayo1" />
+					<label for="revolucionDeMayo1">1816</label>
+					<br />
+					<input type="radio" name="revolucionDeMayo" value="1810" id="revolucionDeMayo2" />
+					<label for="revolucionDeMayo2">1810</label>
+					<br />
+					<input type="radio" name="revolucionDeMayo" value="1806" id="revolucionDeMayo3" />
+					<label for="revolucionDeMayo3">1806</label>
+				</div>
+			</div>
+			<div class="preguntasHistoria">
+				<p>El representante del Rey de España en el Rio de La Plata se llamaba...</p>
+				<div class="contenedorRadios" data-tipo='pregunta'>
+					<input type="radio" name="representante" value="Virrey" id="representante1" />
+					<label for="representante1">Virrey</label>
+					<br />
+					<input type="radio" name="representante" value="Representante" id="representante2" />
+					<label for="representante2">Representante</label>
+					<br />
+					<input type="radio" name="representante" value="Consejero" id="representante3" />
+					<label for="representante3">Consejero</label>
+				</div>
+			</div>
+			<div class="preguntasHistoria">
+				<p>¿Cuántas veces fue votado el ex presidente Juan Domingo Perón?</p>
+				<div class="contenedorRadios" data-tipo='pregunta'>
+					<input type="radio" name="peron" value="1" id="peron1" />
+					<label for="peron1">1</label>
+					<br />
+					<input type="radio" name="peron" value="2" id="peron2" />
+					<label for="peron2">2</label>
+					<br />
+					<input type="radio" name="peron" value="3" id="peron3" />
+					<label for="peron3">3</label>
+				</div>
+			</div>
+		</article>
+		<div id="contenedorBotonFinal">
+			<h2>Haga 'click' para finalizar</h2>
+			<a href="./secciones/puntaje.html" id="botonFinal">
+				<p>FIN</p>
+			</a>
+		</div>
+	</main>
+	<footer>
+		<p>Creador: Julián Scampino</p>
+		<a href="https://www.linkedin.com/in/julian-scampino/" id="linkedin">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+				className="bi bi-linkedin" viewBox="0 0 16 16">
+				<rect xmlns="http://www.w3.org/2000/svg" width="13" height="13" x="2" y="2"></rect>
+				<path
+					d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z">
+				</path>
+			</svg> www.linkedin.com/in/julian-scampino</a>
+	</footer>
+	<!-- ----------- FOOTER ----------- -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+	<!-- <script src="./javascript/minify/script.js"></script>
 		<script src="./javascript/minify/animaciones.js"></script> -->
-		<script src="./javascript/script.js"></script>
-		<script src="./javascript/animaciones.js"></script>
-	</body>
+	<script src="./javascript/script.js"></script>
+	<script src="./javascript/animaciones.js"></script>
+</body>
+
 </html>
